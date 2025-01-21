@@ -1,0 +1,171 @@
+[gd_scene load_steps=13 format=3 uid="uid://ca6nry7cvjn2e"]
+
+[ext_resource type="Script" path="res://scripts/story_intro.gd" id="1_si754"]
+[ext_resource type="Texture2D" uid="uid://di8icfn3qthda" path="res://assets/sprites/Space Background.png" id="2_wcfg1"]
+[ext_resource type="FontFile" uid="uid://c8bx2tonerfbp" path="res://assets/fonts/Oswald-VariableFont_wght.ttf" id="7_oxchv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t0c37"]
+texture = ExtResource("2_wcfg1")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_63r65"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bx4ic"]
+
+[sub_resource type="Animation" id="Animation_o6mtc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_og62r"]
+resource_name = "activate"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bjx6m"]
+_data = {
+"RESET": SubResource("Animation_o6mtc"),
+"activate": SubResource("Animation_og62r")
+}
+
+[sub_resource type="Animation" id="Animation_k4bo2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hfulo"]
+resource_name = "fade_in"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tq40v"]
+_data = {
+"RESET": SubResource("Animation_k4bo2"),
+"fade_in": SubResource("Animation_hfulo")
+}
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_si754")
+
+[node name="Panel" type="Panel" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -999.0
+offset_top = -555.0
+offset_right = 921.0
+offset_bottom = 525.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.04259, 1.04259)
+theme_override_styles/panel = SubResource("StyleBoxTexture_t0c37")
+
+[node name="Continue" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.0
+offset_top = 309.0
+offset_right = 137.0
+offset_bottom = 437.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.362829, 0.362829, 0.362829, 1)
+theme_override_fonts/font = ExtResource("7_oxchv")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = SubResource("StyleBoxEmpty_63r65")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_bx4ic")
+text = "CONTINUE"
+flat = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Continue"]
+libraries = {
+"": SubResource("AnimationLibrary_bjx6m")
+}
+autoplay = "activate"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -905.5
+offset_top = -370.5
+offset_right = 905.5
+offset_bottom = 370.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("7_oxchv")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[center]Year 3577, the Sun exploded 100 years ago. The humans came to this Galaxy 95 years ago, the little that is left of them. They arrived looking for a planet to colonize, or rather to conquer. What humans did not understand is that they were no longer unique, no longer alone. They found the planet E455 10 years ago, they call it SECOND EARTH. An ancient civilization inhabits there willing to live in harmony with the human being, but the human being does not know harmony, a war broke out, a war to this day. You are a mercenary and have been hired by the humans to find weaknesses in this ancient civilization. You look like one of them, you need to breathe like them, but you are not one of them. 
+You don't know what you are, but you know you are not one of them. 
+Your mission starts now.[/center]"
+fit_content = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="RichTextLabel"]
+libraries = {
+"": SubResource("AnimationLibrary_tq40v")
+}
+autoplay = "fade_in"

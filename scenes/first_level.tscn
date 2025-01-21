@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://de0kwungnqr2g"]
+
+[ext_resource type="PackedScene" uid="uid://c364tf7gdw6mm" path="res://scenes/ship.tscn" id="1_xl2f4"]
+
+[node name="first_level" type="Node2D"]
+
+[node name="Ship" parent="." instance=ExtResource("1_xl2f4")]
+
+[node name="Camera2D" type="Camera2D" parent="Ship"]
+position = Vector2(109, 0)
+zoom = Vector2(4, 4)
