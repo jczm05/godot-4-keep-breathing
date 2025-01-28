@@ -1,8 +1,9 @@
 extends CharacterBody2D
 
 
-const SPEED = 100.0
+const SPEED = 250.0
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
 
 func _physics_process(_delta) -> void:
@@ -25,6 +26,7 @@ func _physics_process(_delta) -> void:
 	# Flip in directions 
 	if direction == 0:
 		animated_sprite.flip_h = false
+		
 	elif direction > 0:
 		animated_sprite.flip_h = false
 		animated_sprite.play("move_idle")

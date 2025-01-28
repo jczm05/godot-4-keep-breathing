@@ -194,7 +194,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vnwfc"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_avjpw"]
 
 [node name="Ship" type="CharacterBody2D"]
 script = ExtResource("1_6pn00")
@@ -204,7 +204,8 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_g1q60")
 animation = &"move_idle"
 autoplay = "move_idle"
+frame_progress = 0.231157
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1.96, 1.4939)
-shape = SubResource("CircleShape2D_vnwfc")
+shape = SubResource("RectangleShape2D_avjpw")
