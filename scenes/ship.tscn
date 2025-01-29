@@ -196,7 +196,7 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_avjpw"]
 
-[node name="Ship" type="CharacterBody2D"]
+[node name="Ship" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_6pn00")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
