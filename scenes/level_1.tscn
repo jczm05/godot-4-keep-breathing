@@ -1,6 +1,7 @@
-[gd_scene load_steps=24 format=4 uid="uid://de0kwungnqr2g"]
+[gd_scene load_steps=25 format=4 uid="uid://de0kwungnqr2g"]
 
 [ext_resource type="Texture2D" uid="uid://di8icfn3qthda" path="res://assets/sprites/Space Background.png" id="1_1qdhr"]
+[ext_resource type="Script" path="res://scripts/level_1.gd" id="1_y772u"]
 [ext_resource type="Texture2D" uid="uid://bh4gabpyg6cbg" path="res://assets/sprites/SHIPLEVELTEXTURES.png" id="2_wkpfp"]
 [ext_resource type="PackedScene" uid="uid://c364tf7gdw6mm" path="res://scenes/ship.tscn" id="3_e067m"]
 [ext_resource type="PackedScene" uid="uid://cwh364w0o6khj" path="res://scenes/next_level.tscn" id="4_sq37n"]
@@ -173,6 +174,7 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_phm4c")
 
 [node name="first_level" type="Node2D"]
+script = ExtResource("1_y772u")
 
 [node name="Panel" type="Panel" parent="."]
 texture_filter = 1

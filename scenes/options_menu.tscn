@@ -1,4 +1,4 @@
-[gd_scene load_steps=123 format=3 uid="uid://ckjpkqumq8myq"]
+[gd_scene load_steps=126 format=3 uid="uid://ckjpkqumq8myq"]
 
 [ext_resource type="Texture2D" uid="uid://di8icfn3qthda" path="res://assets/sprites/Space Background.png" id="1_1lprm"]
 [ext_resource type="Script" path="res://scripts/options_menu.gd" id="1_g1g0r"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cm6c1riukmf6v" path="res://assets/sprites/nave.png" id="4_rmca4"]
 [ext_resource type="Texture2D" uid="uid://5hn8b8xik4fy" path="res://assets/logo.png" id="6_teo4c"]
 [ext_resource type="FontFile" uid="uid://c8bx2tonerfbp" path="res://assets/fonts/Oswald-VariableFont_wght.ttf" id="7_0yvqp"]
+[ext_resource type="Script" path="res://scripts/option_button.gd" id="8_w06wo"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t0c37"]
 texture = ExtResource("1_1lprm")
@@ -818,6 +819,10 @@ _data = {
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bx4ic"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3382g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5p3se"]
+
 [node name="Main Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 8
@@ -917,18 +922,44 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_bx4ic")
 text = "GO BACK"
 flat = true
 
-[node name="Label" type="Label" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
+anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -384.0
-offset_top = -15.0
-offset_bottom = 105.0
-grow_horizontal = 0
+offset_left = -276.0
+offset_top = -60.0
+offset_right = 144.0
+offset_bottom = 60.0
+grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("8_w06wo")
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
 theme_override_fonts/font = ExtResource("7_0yvqp")
 theme_override_font_sizes/font_size = 80
 text = "RESOLUTION:"
+
+[node name="Res_OptionButton" type="OptionButton" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.364706, 0.364706, 0.364706, 1)
+theme_override_fonts/font = ExtResource("7_0yvqp")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3382g")
+flat = true
+
+[node name="FullScreen_CheckBox" type="CheckBox" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_0yvqp")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5p3se")
+text = "FULLSCREEN"
+flat = true
+expand_icon = true
+
+[connection signal="item_selected" from="HBoxContainer/Res_OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="item_selected" from="HBoxContainer/Res_OptionButton" to="HBoxContainer" method="_on_option_button_item_selected"]
+[connection signal="toggled" from="HBoxContainer/FullScreen_CheckBox" to="HBoxContainer" method="_on_full_screen_check_box_toggled"]

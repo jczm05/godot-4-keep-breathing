@@ -7,6 +7,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	MusicPlayer.play_menu_music()
 	start_game.button_down.connect(on_start_pressed)
 	exit.button_down.connect(on_exit_pressed)
 	options.button_down.connect(on_options_pressed)
