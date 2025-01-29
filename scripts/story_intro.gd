@@ -8,4 +8,4 @@ func _ready() -> void:
 	continue_b.button_down.connect(on_continue_pressed)
 
 func on_continue_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/first_level.tscn")
+	get_tree().change_scene_to_file("res://scenes/level_1.tscn")
