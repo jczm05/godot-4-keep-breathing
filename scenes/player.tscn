@@ -10,6 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://od2ovnbcl3am" path="res://assets/sprites/characters/Soldier_2/Run.png" id="7_r34rw"]
 [ext_resource type="Texture2D" uid="uid://d3e1n2g6lyqns" path="res://assets/sprites/characters/Soldier_2/Shot_1.png" id="8_umly7"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ybre1"]
+radius = 11.0
+height = 62.0
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_l53lb"]
 atlas = ExtResource("1_ivky6")
 region = Rect2(0, 0, 128, 128)
@@ -230,7 +234,7 @@ region = Rect2(256, 0, 128, 128)
 atlas = ExtResource("8_umly7")
 region = Rect2(384, 0, 128, 128)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_beqnm"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_u2lwj"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -438,23 +442,16 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j64ql"]
-radius = 11.0
-height = 62.0
-
-[node name="Player_Node" type="Node2D"]
-
-[node name="player" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_1nhvy")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 32)
+shape = SubResource("CapsuleShape2D_ybre1")
+debug_color = Color(0.95855, 0.205221, 0, 0.42)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_beqnm")
+sprite_frames = SubResource("SpriteFrames_u2lwj")
 animation = &"flame"
 autoplay = "idle"
-frame_progress = 0.586224
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
-position = Vector2(2, 32)
-shape = SubResource("CapsuleShape2D_j64ql")
-debug_color = Color(0.95855, 0.205221, 0, 0.42)

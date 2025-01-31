@@ -1,49 +1,31 @@
 extends CharacterBody2D
 
-
-const SPEED = 250.0
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+
+@export var speed = 300
 
 
-func _physics_process(_delta) -> void:
-	# Add the gravity.
+func get_input():
+	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	velocity = input_direction * speed
 	
+func _physics_process(delta):
+	get_input()
+	move_and_slide()
+	play_animations()
 
-	# Get the input direction and handle the movement/deceleration.
-	var direction := Input.get_axis("move_left", "move_right")
-	var direction2 := Input.get_axis("move_up","move_down")
-	
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.y, 0, SPEED)
-	if direction2:
-		velocity.y = direction2 * SPEED
-	else:
-		velocity.y = move_toward(velocity.y, 0, SPEED)
-	
-	# Flip in directions 
-	if direction == 0:
-		animated_sprite.flip_h = false
-		
-	elif direction > 0:
-		animated_sprite.flip_h = false
-		animated_sprite.play("move_idle")
-	else:
+func play_animations():
+	if Input.is_action_pressed("move_left"):
 		animated_sprite.flip_h = true
 		animated_sprite.play("move_idle")
-	
-	if direction != 0 && direction2 != 0:
+	if Input.is_action_pressed("move_left") && Input.is_action_pressed("move_up"):
+		animated_sprite.flip_h = true
 		animated_sprite.play("up_down")
-	
-	if direction2 == 0:
-		animated_sprite.flip_v = true
-	elif direction2 > 0:
-		animated_sprite.flip_v = true
+	if Input.is_action_pressed("move_left") && Input.is_action_pressed("move_down"):
+		animated_sprite.flip_h = true
 		animated_sprite.play("up_down")
-	else:
-		animated_sprite.flip_v = false
-		animated_sprite.play("up_down")
-		
-	move_and_slide()
+	if Input.is_action_pressed("move_right"):
+		animated_sprite.flip_h = false
+		animated_sprite.play("move_idle")
+	if !(Input.get_vector("move_left", "move_right", "move_up", "move_down")):
+		animated_sprite.play("move_idle")
