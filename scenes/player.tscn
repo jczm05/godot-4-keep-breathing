@@ -1,8 +1,9 @@
-[gd_scene load_steps=67 format=3 uid="uid://dvnh15ifeobdp"]
+[gd_scene load_steps=68 format=3 uid="uid://dvnh15ifeobdp"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_1nhvy"]
 [ext_resource type="Texture2D" uid="uid://c88jlcbjyyl7y" path="res://assets/sprites/characters/Soldier_2/Shot_2.png" id="1_ivky6"]
 [ext_resource type="Texture2D" uid="uid://c6elcuyvh7sr4" path="res://assets/sprites/characters/Soldier_2/Grenade.png" id="2_0ph8p"]
+[ext_resource type="PackedScene" uid="uid://bsk5jgyual60u" path="res://scenes/bullet.tscn" id="2_aq0oo"]
 [ext_resource type="Texture2D" uid="uid://d0r3jlk8jq3b5" path="res://assets/sprites/characters/Soldier_2/Hurt.png" id="3_tmdlp"]
 [ext_resource type="Texture2D" uid="uid://dnygywwosxblu" path="res://assets/sprites/characters/Soldier_2/Idle.png" id="4_1eijk"]
 [ext_resource type="Texture2D" uid="uid://dn1h5c2ajjxcg" path="res://assets/sprites/characters/Soldier_2/Attack.png" id="5_i1jfw"]
@@ -445,6 +446,10 @@ animations = [{
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_1nhvy")
 
+[node name="bullet" parent="." instance=ExtResource("2_aq0oo")]
+position = Vector2(28, 19)
+scale = Vector2(0.4, 0.4)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 32)
 shape = SubResource("CapsuleShape2D_ybre1")
@@ -453,5 +458,5 @@ debug_color = Color(0.95855, 0.205221, 0, 0.42)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_u2lwj")
-animation = &"flame"
+animation = &"shot"
 autoplay = "idle"

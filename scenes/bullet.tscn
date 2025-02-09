@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://bsk5jgyual60u"]
+
+[ext_resource type="Script" path="res://scripts/bullet.gd" id="1_870b5"]
+[ext_resource type="Texture2D" uid="uid://mat0tg6bc6uw" path="res://assets/sprites/bullet1.png" id="1_pd5h5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y036n"]
+radius = 1.0
+height = 9.98435
+
+[sub_resource type="Gradient" id="Gradient_arqtr"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8h0em"]
+gradient = SubResource("Gradient_arqtr")
+
+[node name="bullet" type="CharacterBody2D"]
+script = ExtResource("1_870b5")
+
+[node name="Bullet1" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_pd5h5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-1, 0)
+rotation = 1.57005
+scale = Vector2(2.87815, 2.00312)
+shape = SubResource("CapsuleShape2D_y036n")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-1, 0)
+scale = Vector2(0.3125, 0.03125)
+color = Color(0.912271, 4.71681e-06, 6.73831e-07, 1)
+energy = 4.24
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_8h0em")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(-1.5, -1.5)
+scale = Vector2(0.265625, 0.015625)
+color = Color(0.912271, 4.71681e-06, 6.73831e-07, 1)
+energy = 4.24
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_8h0em")
+
+[node name="PointLight2D5" type="PointLight2D" parent="."]
+position = Vector2(-1.5, 1.5)
+scale = Vector2(0.265625, 0.015625)
+color = Color(0.912271, 4.71681e-06, 6.73831e-07, 1)
+energy = 4.24
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_8h0em")
+
+[node name="PointLight2D3" type="PointLight2D" parent="."]
+position = Vector2(-1, -2.5)
+scale = Vector2(0.1875, 0.015625)
+color = Color(0.912271, 4.71681e-06, 6.73831e-07, 1)
+energy = 4.24
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_8h0em")
+
+[node name="PointLight2D4" type="PointLight2D" parent="."]
+position = Vector2(-1, 2.5)
+scale = Vector2(0.1875, 0.015625)
+color = Color(0.912271, 4.71681e-06, 6.73831e-07, 1)
+energy = 4.24
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_8h0em")

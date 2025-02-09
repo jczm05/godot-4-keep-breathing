@@ -18,12 +18,6 @@ func play_animations():
 	if Input.is_action_pressed("move_left"):
 		animated_sprite.flip_h = true
 		animated_sprite.play("move_idle")
-	if Input.is_action_pressed("move_left") && Input.is_action_pressed("move_up"):
-		animated_sprite.flip_h = true
-		animated_sprite.play("up_down")
-	if Input.is_action_pressed("move_left") && Input.is_action_pressed("move_down"):
-		animated_sprite.flip_h = true
-		animated_sprite.play("up_down")
 	if Input.is_action_pressed("move_right"):
 		animated_sprite.flip_h = false
 		animated_sprite.play("move_idle")
