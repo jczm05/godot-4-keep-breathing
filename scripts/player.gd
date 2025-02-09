@@ -22,5 +22,9 @@ func play_animations():
 	if Input.is_action_pressed("move_right"):
 		animated_sprite.flip_h = false
 		animated_sprite.play("run")
+	if Input.is_action_pressed("move_up"):
+		animated_sprite.play("run")
+	if Input.is_action_pressed("move_down"):
+		animated_sprite.play("run")
 	if !(Input.get_vector("move_left", "move_right", "move_up", "move_down")):
 		animated_sprite.play("idle")

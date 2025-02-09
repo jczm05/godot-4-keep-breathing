@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bpxmbg4iwpcgv"
+path="res://.godot/imported/nave.aseprite-e78cd390437f3ba3f3e1b0555522bbee.res"
+
+[deps]
+
+source_file="res://assets/sprites/nave.aseprite"
+dest_files=["res://.godot/imported/nave.aseprite-e78cd390437f3ba3f3e1b0555522bbee.res"]
+
+[params]
+
