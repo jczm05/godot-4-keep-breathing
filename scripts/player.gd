@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-@export var speed = 250
+@export var speed = 150
 
 
 func get_input():
@@ -17,14 +17,12 @@ func _physics_process(delta):
 
 func play_animations():
 	if Input.is_action_pressed("move_left"):
-		animated_sprite.flip_h = true
-		animated_sprite.play("run")
+		animated_sprite.play("run_left")
 	if Input.is_action_pressed("move_right"):
-		animated_sprite.flip_h = false
-		animated_sprite.play("run")
+		animated_sprite.play("run_right")
 	if Input.is_action_pressed("move_up"):
-		animated_sprite.play("run")
+		animated_sprite.play("run_up")
 	if Input.is_action_pressed("move_down"):
-		animated_sprite.play("run")
+		animated_sprite.play("run_down")
 	if !(Input.get_vector("move_left", "move_right", "move_up", "move_down")):
 		animated_sprite.play("idle")
