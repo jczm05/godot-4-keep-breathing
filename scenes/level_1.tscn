@@ -211,7 +211,6 @@ rotation = 0.00107861
 scale = Vector2(0.229252, 128.133)
 color = Color(0, 1, 1, 1)
 energy = 2.49
-shadow_enabled = true
 texture = SubResource("GradientTexture1D_4vini")
 offset = Vector2(-126.892, 0.00144282)
 
