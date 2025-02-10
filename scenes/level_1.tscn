@@ -206,14 +206,14 @@ tile_set = SubResource("TileSet_73ke8")
 
 [node name="PointLight2D" type="PointLight2D" parent="Lights"]
 texture_filter = 1
-position = Vector2(1554, -5.96046e-08)
+position = Vector2(1583.09, -0.153496)
 rotation = 0.00107861
 scale = Vector2(0.229252, 128.133)
 color = Color(0, 1, 1, 1)
 energy = 2.49
 shadow_enabled = true
-shadow_color = Color(0, 0, 0, 1)
 texture = SubResource("GradientTexture1D_4vini")
+offset = Vector2(-126.892, 0.00144282)
 
 [node name="PointLight2D2" type="PointLight2D" parent="Lights"]
 position = Vector2(1615.25, 0)
