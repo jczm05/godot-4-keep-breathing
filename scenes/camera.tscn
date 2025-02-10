@@ -1,0 +1,87 @@
+[gd_scene load_steps=11 format=3 uid="uid://cqraf65xdnvto"]
+
+[ext_resource type="Script" path="res://scripts/camera.gd" id="1_cgb0y"]
+[ext_resource type="Texture2D" uid="uid://bni65m4le77n7" path="res://assets/sprites/camera.png" id="1_yc16b"]
+[ext_resource type="Texture2D" uid="uid://c83sipbyp28ji" path="res://assets/camera light.png" id="3_doeys"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i051a"]
+atlas = ExtResource("1_yc16b")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ok7mi"]
+atlas = ExtResource("1_yc16b")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30vca"]
+atlas = ExtResource("1_yc16b")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adfkg"]
+atlas = ExtResource("1_yc16b")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8t3i"]
+atlas = ExtResource("1_yc16b")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_omusp"]
+atlas = ExtResource("1_yc16b")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t7b31"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i051a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ok7mi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30vca")
+}],
+"loop": true,
+"name": &"detected",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adfkg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8t3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_omusp")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[node name="Camera" type="Area2D" groups=["Player"]]
+script = ExtResource("1_cgb0y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_t7b31")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.890511
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-0.0325098, 6.02876)
+rotation = 1.5708
+scale = Vector2(0.440001, 1)
+energy = 3.75
+shadow_enabled = true
+texture = ExtResource("3_doeys")
+offset = Vector2(152.207, -0.0325127)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, 31)
+scale = Vector2(1.18519, 2.01143)
+polygon = PackedVector2Array(-6.75, 12.429, 6.75, 12.429, 37.125, 53.6932, -37.125, 53.6932)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

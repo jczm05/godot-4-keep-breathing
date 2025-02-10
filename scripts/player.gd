@@ -10,7 +10,7 @@ func get_input():
 	velocity = input_direction * speed
 	
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	get_input()
 	move_and_slide()
 	play_animations()
