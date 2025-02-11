@@ -1,7 +1,5 @@
 extends CharacterBody2D
-
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-
 @export var speed = 150
 
 
@@ -14,6 +12,7 @@ func _physics_process(_delta):
 	get_input()
 	move_and_slide()
 	play_animations()
+
 
 func play_animations():
 	if Input.is_action_pressed("move_left"):

@@ -938,6 +938,7 @@ script = ExtResource("8_w06wo")
 
 [node name="Label" type="Label" parent="HBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.87451, 0.87451, 0.87451, 1)
 theme_override_fonts/font = ExtResource("7_0yvqp")
 theme_override_font_sizes/font_size = 80
 text = "RESOLUTION:"

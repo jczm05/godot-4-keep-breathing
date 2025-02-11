@@ -1,10 +1,11 @@
-[gd_scene load_steps=25 format=4 uid="uid://de0kwungnqr2g"]
+[gd_scene load_steps=26 format=4 uid="uid://de0kwungnqr2g"]
 
 [ext_resource type="Texture2D" uid="uid://di8icfn3qthda" path="res://assets/sprites/Space Background.png" id="1_1qdhr"]
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_y772u"]
 [ext_resource type="Texture2D" uid="uid://bh4gabpyg6cbg" path="res://assets/sprites/SHIPLEVELTEXTURES.png" id="2_wkpfp"]
 [ext_resource type="PackedScene" uid="uid://c364tf7gdw6mm" path="res://scenes/ship.tscn" id="3_e067m"]
 [ext_resource type="PackedScene" uid="uid://cwh364w0o6khj" path="res://scenes/next_level.tscn" id="4_sq37n"]
+[ext_resource type="PackedScene" uid="uid://b6wmx150no6s6" path="res://scenes/pause_menu.tscn" id="6_m77ub"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fwk6c"]
 texture = ExtResource("1_1qdhr")
@@ -301,3 +302,5 @@ layer_0/tile_data = PackedInt32Array(-1048546, 0, 2, -983010, 0, 4, -917474, 0, 
 [node name="NextLevel" parent="." instance=ExtResource("4_sq37n")]
 position = Vector2(1876, -418)
 scale = Vector2(1.2, 2.6)
+
+[node name="pause_menu" parent="." instance=ExtResource("6_m77ub")]
