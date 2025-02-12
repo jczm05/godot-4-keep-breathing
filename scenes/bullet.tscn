@@ -1,29 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://di65vde5y1qi"]
+[gd_scene load_steps=5 format=3 uid="uid://bjlatsw15644d"]
 
 [ext_resource type="Script" path="res://scripts/bullet.gd" id="1_870b5"]
 [ext_resource type="Texture2D" uid="uid://mat0tg6bc6uw" path="res://assets/sprites/bullet1.png" id="1_pd5h5"]
 [ext_resource type="Texture2D" uid="uid://cu4wrol8x5ve6" path="res://assets/lightbull.png" id="3_28o5v"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4r5mt"]
-radius = 1.82272
-height = 10.9363
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvbr7"]
+size = Vector2(18, 6)
 
-[node name="Node2D" type="CharacterBody2D"]
-scale = Vector2(0.548632, 0.548632)
+[node name="Bullet" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 4
 script = ExtResource("1_870b5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(0.562548, 0.562548)
+scale = Vector2(0.559999, 0.559999)
 texture = ExtResource("1_pd5h5")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+scale = Vector2(0.559999, 0.559999)
+shape = SubResource("RectangleShape2D_kvbr7")
+
 [node name="PointLight2D" type="PointLight2D" parent="."]
-scale = Vector2(0.0521877, 0.0521877)
-color = Color(0.752688, 0.318977, 0.120738, 1)
-energy = 6.91
-shadow_enabled = true
+scale = Vector2(-0.031297, 0.00870312)
+color = Color(1, 0, 0, 1)
+energy = 10.0
 texture = ExtResource("3_28o5v")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_4r5mt")
+[node name="Timer" type="Timer" parent="."]

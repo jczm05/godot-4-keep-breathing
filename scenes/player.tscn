@@ -1,8 +1,7 @@
-[gd_scene load_steps=25 format=3 uid="uid://dvnh15ifeobdp"]
+[gd_scene load_steps=24 format=3 uid="uid://dvnh15ifeobdp"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_1nhvy"]
 [ext_resource type="Texture2D" uid="uid://bytq0s1q48bo3" path="res://assets/sprites/main.png" id="2_ki86a"]
-[ext_resource type="PackedScene" uid="uid://c4xq1hq12du88" path="res://scenes/gun.tscn" id="3_44snv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ybre1"]
 radius = 5.0
@@ -172,6 +171,7 @@ cull_mode = 2
 polygon = PackedVector2Array(1, 13, 1, 20, -2, 20, -2, 35, 0, 35, 0, 41, -2, 41, -2, 52, 5, 52, 8, 52, 8, 23, 7, 22, 8, 20, 8, 13)
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
+collision_mask = 5
 script = ExtResource("1_1nhvy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -193,6 +193,5 @@ show_behind_parent = true
 texture_filter = 2
 occluder = SubResource("OccluderPolygon2D_f7gfj")
 
-[node name="Node2D" parent="." instance=ExtResource("3_44snv")]
-position = Vector2(9, 27)
-scale = Vector2(-0.896059, -0.896059)
+[node name="bullet_spawn" type="Marker2D" parent="."]
+position = Vector2(4, 30)
