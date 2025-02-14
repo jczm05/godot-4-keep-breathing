@@ -1,6 +1,8 @@
 extends RigidBody2D
 class_name Bullet
-  
+@onready var sprite_2d: AnimatedSprite2D = $Sprite2D
+@onready var point_light_2d: PointLight2D = $PointLight2D
+
 #You can use this signal to alert other nodes that the bullet hit something
 signal hit_something  
 
@@ -21,7 +23,9 @@ func _physics_process(_delta):
 
 	#If it hit something, emit the signal from earlier
 	if collision != null:    
-		hit_something.emit()    
-
-		#Then delete the bullet  
+		freeze = true
+		point_light_2d.color = Color.YELLOW
+		sprite_2d.play("explode")
+		hit_something.emit()
+		await get_tree().create_timer(0.05).timeout
 		queue_free() 

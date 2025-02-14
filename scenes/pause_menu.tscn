@@ -109,5 +109,13 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_88g5s")
 text = "EXIT THE GAME"
 flat = true
 
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.87451, 0.87451, 0.87451, 1)
+theme_override_fonts/font = ExtResource("2_ewkws")
+theme_override_font_sizes/font_size = 30
+text = "Versión 0.1 (alpha) - Juan Carlos Zamarreño Cruces"
+
 [connection signal="item_selected" from="VBoxContainer/HBoxContainer/Res_OptionButton" to="VBoxContainer/HBoxContainer" method="_on_option_button_item_selected"]
 [connection signal="toggled" from="VBoxContainer/HBoxContainer/FullScreen_CheckBox" to="VBoxContainer/HBoxContainer" method="_on_full_screen_check_box_toggled"]

@@ -220,7 +220,7 @@ scale = Vector2(0.96, 0.96)
 [node name="Camera2D" type="Camera2D" parent="Player_Node"]
 position = Vector2(3.12499, 30.2083)
 scale = Vector2(4.55248, 3.56027)
-zoom = Vector2(3.5, 3.5)
+zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 
 [node name="pause_menu" parent="." instance=ExtResource("5_fnmwk")]

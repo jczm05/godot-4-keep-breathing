@@ -33,10 +33,6 @@ window/stretch/aspect="ignore"
 mouse_cursor/custom_image="res://assets/sprites/alt_cursor.png"
 window/canvas_textures/default_texture_filter=1
 
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg")
-
 [global_group]
 
 Player=""
