@@ -1,20 +1,27 @@
 extends RigidBody2D
+class_name Bullet
+  
+#You can use this signal to alert other nodes that the bullet hit something
+signal hit_something  
 
-@export var speed: float = 500.0  # Velocidad de la bala
-var direction: Vector2 = Vector2.ZERO
+#Variable for keeping track of it's velocity        
+var velocity:Vector2    
 
-func _ready() -> void:
-	pass
 
-func _physics_process(delta: float) -> void:
-	global_position += direction * speed * delta
+#Set the velocity of the bullet  
+#Call this right after creating the bullet to make it start moving
+func launch(direction:Vector2, speed:float):    
+	velocity = direction * speed    
 
-func _on_body_entered(body: TileMapLayer):
-	if body.is_in_group("Escenario"):
-		print("pium")
-		queue_free()
+#This is automatically called every physics update.
+func _physics_process(_delta):  
+	#Move the bullet using it's previously defined velocity  
+	#And save any collisions that may happen.
+	var collision = move_and_collide(velocity)    
 
-func _on_area_entered(area: TileMapLayer):
-	if area.is_in_group("Escenario"):
-		print("pium")
-		queue_free()
+	#If it hit something, emit the signal from earlier
+	if collision != null:    
+		hit_something.emit()    
+
+		#Then delete the bullet  
+		queue_free() 

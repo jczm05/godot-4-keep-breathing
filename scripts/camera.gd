@@ -4,8 +4,8 @@ extends Area2D
 @onready var light: PointLight2D = $PointLight2D
 
 
-func _on_body_entered(CharacterBody2D):
-	if CharacterBody2D == player_node:
+func _on_body_entered(cb: CharacterBody2D):
+	if cb == player_node:
 		animated_sprite.play("detected")
 		print("aaaaa")
 		light.color = Color.RED

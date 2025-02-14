@@ -194,4 +194,4 @@ texture_filter = 2
 occluder = SubResource("OccluderPolygon2D_f7gfj")
 
 [node name="bullet_spawn" type="Marker2D" parent="."]
-position = Vector2(4, 30)
+position = Vector2(4, 24)

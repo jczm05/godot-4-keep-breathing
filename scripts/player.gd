@@ -1,7 +1,7 @@
 extends CharacterBody2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @export var speed = 150
-var bullet_speed = 900
+var bullet_speed = 700
 var bullet = preload("res://scenes/bullet.tscn")
 @onready var bullet_spawn: Marker2D = $bullet_spawn
 
@@ -29,17 +29,19 @@ func play_animations():
 		animated_sprite.play("idle")
 
 func fire():
+	# Instanciar la bala
 	var bullet_instance = bullet.instantiate()
-	bullet_instance.global_position = bullet_spawn.global_position #global_position + Vector2(16, 16)
+	bullet_instance.global_position = bullet_spawn.global_position  # Posición de inicio de la bala
 	
 	# Obtener la dirección hacia el ratón
 	var mouse_pos = get_global_mouse_position()
-	var direction = (mouse_pos - global_position).normalized()
+	var direction = (mouse_pos - bullet_spawn.global_position).normalized()  # Dirección normalizada hacia el ratón
 	
-	# Establecer la rotación de la bala
+	# Establecer la rotación de la bala para que apunte a la dirección
 	bullet_instance.rotation = direction.angle()
 	
-	# Aplicar el impulso en la dirección del ratón
+	
+	# Usar RigidBody2D para la física
 	bullet_instance.apply_impulse(direction * bullet_speed)
 	
 	# Agregar la bala a la escena
