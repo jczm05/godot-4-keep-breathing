@@ -7,7 +7,7 @@ extends Area2D
 func _on_body_entered(cb: CharacterBody2D):
 	if cb == player_node:
 		animated_sprite.play("detected")
-		print("aaaaa")
+		print("Player detected")
 		light.color = Color.RED
 
 
