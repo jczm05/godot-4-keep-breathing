@@ -5,7 +5,7 @@ extends CharacterBody2D
 
 
 func _ready() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 
 func get_input():
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -15,6 +15,7 @@ func _physics_process(_delta):
 	get_input()
 	move_and_slide()
 	play_animations()
+	
 		
 
 func play_animations():
