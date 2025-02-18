@@ -217,14 +217,6 @@ rotation = 2.27738
 position = Vector2(-207, 3)
 scale = Vector2(0.96, 0.96)
 
-[node name="Camera2D" type="Camera2D" parent="Player_Node"]
-position = Vector2(3.12499, 30.2083)
-scale = Vector2(4.55248, 3.56027)
-zoom = Vector2(4, 4)
-position_smoothing_enabled = true
-
 [node name="pause_menu" parent="." instance=ExtResource("5_fnmwk")]
-
-[node name="Area2D" type="Area2D" parent="."]
 
 [connection signal="body_entered" from="Cameras/Camera" to="Player_Node" method="_on_camera_body_entered"]

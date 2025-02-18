@@ -110,7 +110,7 @@ angle_max = 380.0
 split_scale = true
 scale_curve_x = null
 scale_curve_y = null
-color = Color(0.854902, 0, 0, 1)
+color = Color(0.854902, 1, 0, 1)
 hue_variation_curve = SubResource("Curve_hanyc")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
