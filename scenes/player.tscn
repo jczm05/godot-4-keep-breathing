@@ -202,4 +202,4 @@ zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 
 [node name="gun" parent="." instance=ExtResource("3_cexbq")]
-position = Vector2(5, 34)
+position = Vector2(7, 34)

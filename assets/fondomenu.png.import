@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://da1pmgtood2x4"
-path="res://.godot/imported/second_earth.png-a152dfe81db7f7466a3575a0878a6fff.ctex"
+uid="uid://26tx118007ky"
+path="res://.godot/imported/fondomenu.png-9ca578f56e139992ad745812f48b6c8f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/second_earth.png"
-dest_files=["res://.godot/imported/second_earth.png-a152dfe81db7f7466a3575a0878a6fff.ctex"]
+source_file="res://assets/fondomenu.png"
+dest_files=["res://.godot/imported/fondomenu.png-9ca578f56e139992ad745812f48b6c8f.ctex"]
 
 [params]
 
