@@ -92,10 +92,10 @@ gradient = SubResource("Gradient_nwysr")
 fill_from = Vector2(1, 0)
 fill_to = Vector2(0, 0)
 
-[sub_resource type="Gradient" id="Gradient_qqqy0"]
+[sub_resource type="Gradient" id="Gradient_pg8uw"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_i0xsc"]
-gradient = SubResource("Gradient_qqqy0")
+gradient = SubResource("Gradient_pg8uw")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kt0cf"]
 texture = ExtResource("2_wkpfp")
