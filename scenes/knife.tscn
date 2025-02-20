@@ -1,0 +1,84 @@
+[gd_scene load_steps=11 format=3 uid="uid://cyyekuwh64lgt"]
+
+[ext_resource type="Script" path="res://scripts/knife.gd" id="1_1kwo6"]
+[ext_resource type="Texture2D" uid="uid://o3ewsiq4sndq" path="res://assets/sprites/knife.png" id="1_t3sxn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kivec"]
+atlas = ExtResource("1_t3sxn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hgf8"]
+atlas = ExtResource("1_t3sxn")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejpik"]
+atlas = ExtResource("1_t3sxn")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sw7ua"]
+atlas = ExtResource("1_t3sxn")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fi33p"]
+atlas = ExtResource("1_t3sxn")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83vwg"]
+atlas = ExtResource("1_t3sxn")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbn5m"]
+atlas = ExtResource("1_t3sxn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rqnpm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kivec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hgf8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejpik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sw7ua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fi33p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83vwg")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbn5m")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="knife" type="Area2D"]
+script = ExtResource("1_1kwo6")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(0, 4, -1, -14, 35, -13, 34, 2, 17, 4)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_rqnpm")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

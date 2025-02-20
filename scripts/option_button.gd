@@ -3,14 +3,13 @@ extends HBoxContainer
 @onready var option_button: OptionButton = $Res_OptionButton
 @onready var full_screen_check_box: CheckBox = $FullScreen_CheckBox
 
-var Resolutions: Dictionary = {"3840x2160":Vector2i(3840,2160),
+var Resolutions: Dictionary = { "3840x2160":Vector2i(3840,2160),
 								"2560x1440":Vector2i(2560,1440),
 								"1920x1080":Vector2i(1920,1080),
 								"1600x900":Vector2i(1600,900),
 								"1366x768":Vector2i(1366,768),
 								"1280x720":Vector2i(1280,720)}
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Add_Resolution()
 	Check_Variables()
