@@ -1,7 +1,6 @@
-[gd_scene load_steps=26 format=3 uid="uid://dvnh15ifeobdp"]
+[gd_scene load_steps=25 format=3 uid="uid://dvnh15ifeobdp"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_1nhvy"]
-[ext_resource type="PackedScene" uid="uid://cyyekuwh64lgt" path="res://scenes/knife.tscn" id="2_g761j"]
 [ext_resource type="Texture2D" uid="uid://cl455q1ankiwa" path="res://assets/sprites/maint.png" id="2_ki86a"]
 [ext_resource type="PackedScene" uid="uid://bgrgomaplhcph" path="res://scenes/gun.tscn" id="3_cexbq"]
 
@@ -201,11 +200,6 @@ position = Vector2(3.12499, 30.2083)
 scale = Vector2(4.55248, 3.56027)
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
-
-[node name="knife" parent="." instance=ExtResource("2_g761j")]
-position = Vector2(9, 28)
-rotation = 0.201093
-scale = Vector2(0.81565, 0.81565)
 
 [node name="gun" parent="." instance=ExtResource("3_cexbq")]
 position = Vector2(7, 34)
