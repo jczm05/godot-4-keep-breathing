@@ -31,6 +31,7 @@ window/size/resizable=false
 window/stretch/mode="viewport"
 window/stretch/aspect="ignore"
 mouse_cursor/custom_image="res://assets/sprites/alt_cursor.png"
+mouse_cursor/custom_image_hotspot=Vector2(32, 32)
 window/canvas_textures/default_texture_filter=1
 
 [global_group]
