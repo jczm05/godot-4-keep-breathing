@@ -182,11 +182,6 @@ scale = Vector2(0.827097, 1)
 shape = SubResource("CapsuleShape2D_ybre1")
 debug_color = Color(0.95855, 0.205221, 0, 0.42)
 
-[node name="line" type="Line2D" parent="."]
-width = 0.5
-default_color = Color(4.52429e-06, 0.788088, 0.280338, 1)
-script = ExtResource("4_tgjw7")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(5, 32)
@@ -209,3 +204,6 @@ position_smoothing_enabled = true
 
 [node name="gun" parent="." instance=ExtResource("3_cexbq")]
 position = Vector2(7, 34)
+
+[node name="line" type="Line2D" parent="."]
+script = ExtResource("4_tgjw7")
