@@ -1,5 +1,5 @@
 extends Node2D
-var bullet_speed = 700
+var bullet_speed = 900
 var bullet = preload("res://scenes/bullet.tscn")
 @onready var bullet_spawn: Marker2D = $bullet_spawn
 @onready var shoot_speed_timer: Timer = $shootSpeedTimer
