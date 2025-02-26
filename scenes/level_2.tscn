@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://bwtu0m28yukwl"]
+[gd_scene load_steps=32 format=4 uid="uid://bwtu0m28yukwl"]
 
 [ext_resource type="Script" path="res://scripts/level_2.gd" id="1_6a71w"]
 [ext_resource type="Texture2D" uid="uid://hw5al138tofi" path="res://assets/sprites/charlevelfloorsboxes-v3.png" id="1_kavgi"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://orhyqw477h6" path="res://assets/luz_2.png" id="4_j6b6j"]
 [ext_resource type="PackedScene" uid="uid://b6wmx150no6s6" path="res://scenes/pause_menu.tscn" id="5_fnmwk"]
 [ext_resource type="PackedScene" uid="uid://cwh364w0o6khj" path="res://scenes/next_level.tscn" id="6_c72ps"]
+[ext_resource type="PackedScene" uid="uid://duvwyjw8iv07d" path="res://scenes/gui.tscn" id="10_o44ra"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h1kd1"]
 texture = ExtResource("3_fwhj4")
@@ -153,6 +154,8 @@ gradient = SubResource("Gradient_qqqy0")
 
 [node name="level_2" type="Node2D"]
 script = ExtResource("1_6a71w")
+
+[node name="GUI" parent="." instance=ExtResource("10_o44ra")]
 
 [node name="outside" type="TileMapLayer" parent="."]
 self_modulate = Color(0.712129, 0.712129, 0.712129, 1)
