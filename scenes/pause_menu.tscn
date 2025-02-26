@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6wmx150no6s6"]
+[gd_scene load_steps=13 format=3 uid="uid://b6wmx150no6s6"]
 
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_146p2"]
 [ext_resource type="Script" path="res://scripts/option_button.gd" id="1_503kn"]
+[ext_resource type="Texture2D" uid="uid://cxo0n57xh3jel" path="res://assets/door2.png" id="2_3nhdj"]
 [ext_resource type="FontFile" uid="uid://c8bx2tonerfbp" path="res://assets/fonts/Oswald-VariableFont_wght.ttf" id="2_ewkws"]
+[ext_resource type="Texture2D" uid="uid://cspj6mane0f26" path="res://assets/door.png" id="3_4wjkg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g4uxm"]
 
@@ -11,6 +13,67 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fetpx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_88g5s"]
+
+[sub_resource type="Animation" id="Animation_w3nrw"]
+resource_name = "new_animation"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/Sprite2D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2847, 544), Vector2(1803, 544)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect/Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-919, 544), Vector2(133, 544)]
+}
+
+[sub_resource type="Animation" id="Animation_inn7r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/Sprite2D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1803, 544)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect/Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(133, 544)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3vrrf"]
+_data = {
+"RESET": SubResource("Animation_inn7r"),
+"new_animation": SubResource("Animation_w3nrw")
+}
 
 [node name="pause_menu" type="CanvasLayer"]
 process_mode = 3
@@ -23,7 +86,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.25098, 0.25098, 0.25098, 0.301961)
+color = Color(0.25098, 0.25098, 0.25098, 0)
+
+[node name="Sprite2D2" type="Sprite2D" parent="ColorRect"]
+texture_filter = 1
+position = Vector2(1803, 544)
+scale = Vector2(17.4, 17.4)
+texture = ExtResource("2_3nhdj")
+
+[node name="Sprite2D" type="Sprite2D" parent="ColorRect"]
+texture_filter = 1
+position = Vector2(133, 544)
+scale = Vector2(17.4, 17.4)
+texture = ExtResource("3_4wjkg")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 visible = false
@@ -116,6 +191,13 @@ theme_override_colors/font_color = Color(0.87451, 0.87451, 0.87451, 1)
 theme_override_fonts/font = ExtResource("2_ewkws")
 theme_override_font_sizes/font_size = 30
 text = "Versión 0.1 (alpha) - Juan Carlos Zamarreño Cruces"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+process_mode = 3
+libraries = {
+"": SubResource("AnimationLibrary_3vrrf")
+}
+autoplay = "new_animation"
 
 [connection signal="item_selected" from="VBoxContainer/HBoxContainer/Res_OptionButton" to="VBoxContainer/HBoxContainer" method="_on_option_button_item_selected"]
 [connection signal="toggled" from="VBoxContainer/HBoxContainer/FullScreen_CheckBox" to="VBoxContainer/HBoxContainer" method="_on_full_screen_check_box_toggled"]

@@ -3,6 +3,7 @@ extends CanvasLayer
 @onready var exit: Button = $VBoxContainer/Exit
 @onready var continue_bt: Button = $VBoxContainer/Continue
 @onready var exit_mm: Button = $VBoxContainer/Exit_mm
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
 	exit.button_down.connect(on_exit_pressed)
@@ -12,6 +13,7 @@ func _ready() -> void:
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_pressed("pause"):
 		get_tree().paused = not get_tree().paused
+		animation_player.play()
 		$ColorRect.visible = not $ColorRect.visible
 		$VBoxContainer.visible = not $VBoxContainer.visible
 		
