@@ -1,9 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://duvwyjw8iv07d"]
+[gd_scene load_steps=25 format=3 uid="uid://duvwyjw8iv07d"]
 
 [ext_resource type="Texture2D" uid="uid://c2pt2k0kapsj" path="res://assets/health_bad.png" id="1_ja4jw"]
 [ext_resource type="Texture2D" uid="uid://v3k2d5bqovvi" path="res://assets/health_dead.png" id="2_nklw4"]
 [ext_resource type="Texture2D" uid="uid://ds8mmjw47sqj" path="res://assets/health_perfect.png" id="3_ltxhc"]
 [ext_resource type="Texture2D" uid="uid://bjare7vbydgld" path="res://assets/health_middle.png" id="4_6jhy7"]
+[ext_resource type="Texture2D" uid="uid://dl0m0cle65nbu" path="res://assets/ammo.png" id="5_e65df"]
+[ext_resource type="FontFile" uid="uid://15mv8hlvoklm" path="res://assets/fonts/Play-Regular.ttf" id="6_hej2n"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x64cr"]
 
@@ -166,3 +168,62 @@ offset_top = 1026.0
 offset_right = 109.0
 offset_bottom = 1049.0
 text = "ALPHA BUILD V 0.1 JCZM"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(523, 101)
+scale = Vector2(4.68, 4.68)
+texture = ExtResource("5_e65df")
+
+[node name="Label2" type="Label" parent="."]
+texture_filter = 1
+offset_left = 516.0
+offset_top = 54.0
+offset_right = 597.0
+offset_bottom = 136.0
+theme_override_colors/font_color = Color(0, 0.815686, 0.772549, 1)
+theme_override_colors/font_shadow_color = Color(0, 1, 0.729412, 1)
+theme_override_colors/font_outline_color = Color(0, 0.823529, 0.701961, 1)
+theme_override_fonts/font = ExtResource("6_hej2n")
+theme_override_font_sizes/font_size = 65
+text = "10"
+
+[node name="Label5" type="Label" parent="."]
+texture_filter = 1
+offset_left = 596.0
+offset_top = 105.0
+offset_right = 677.0
+offset_bottom = 187.0
+theme_override_colors/font_color = Color(0, 0.815686, 0.772549, 1)
+theme_override_colors/font_shadow_color = Color(0, 1, 0.729412, 1)
+theme_override_colors/font_outline_color = Color(0, 0.823529, 0.701961, 1)
+theme_override_fonts/font = ExtResource("6_hej2n")
+theme_override_font_sizes/font_size = 45
+text = "12"
+
+[node name="Label3" type="Label" parent="."]
+texture_filter = 1
+offset_left = 490.0
+offset_top = 62.0
+offset_right = 571.0
+offset_bottom = 144.0
+theme_override_colors/font_color = Color(0, 0.815686, 0.772549, 1)
+theme_override_colors/font_shadow_color = Color(0, 1, 0.729412, 1)
+theme_override_colors/font_outline_color = Color(0, 0.823529, 0.701961, 1)
+theme_override_fonts/font = ExtResource("6_hej2n")
+theme_override_font_sizes/font_size = 50
+text = "x"
+
+[node name="Label4" type="Label" parent="."]
+texture_filter = 1
+offset_left = 616.0
+offset_top = 81.0
+offset_right = 697.0
+offset_bottom = 163.0
+rotation = 0.774532
+theme_override_colors/font_color = Color(0, 0.815686, 0.772549, 1)
+theme_override_colors/font_shadow_color = Color(0, 1, 0.729412, 1)
+theme_override_colors/font_outline_color = Color(0, 0.823529, 0.701961, 1)
+theme_override_fonts/font = ExtResource("6_hej2n")
+theme_override_font_sizes/font_size = 65
+text = "|"
