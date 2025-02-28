@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://bwtu0m28yukwl"]
+[gd_scene load_steps=33 format=4 uid="uid://bwtu0m28yukwl"]
 
 [ext_resource type="Script" path="res://scripts/level_2.gd" id="1_6a71w"]
 [ext_resource type="Texture2D" uid="uid://hw5al138tofi" path="res://assets/sprites/charlevelfloorsboxes-v3.png" id="1_kavgi"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://orhyqw477h6" path="res://assets/luz_2.png" id="4_j6b6j"]
 [ext_resource type="PackedScene" uid="uid://b6wmx150no6s6" path="res://scenes/pause_menu.tscn" id="5_fnmwk"]
 [ext_resource type="PackedScene" uid="uid://cwh364w0o6khj" path="res://scenes/next_level.tscn" id="6_c72ps"]
+[ext_resource type="PackedScene" uid="uid://dw08sp4b0yrw8" path="res://scenes/ammo_item.tscn" id="7_j4yly"]
 [ext_resource type="PackedScene" uid="uid://duvwyjw8iv07d" path="res://scenes/gui.tscn" id="10_o44ra"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h1kd1"]
@@ -387,5 +388,7 @@ scale = Vector2(4.06, 2.02183)
 energy = 2.1
 blend_mode = 1
 texture = SubResource("GradientTexture2D_o5e1h")
+
+[node name="ammo_item" parent="." instance=ExtResource("7_j4yly")]
 
 [connection signal="body_entered" from="Cameras/Camera" to="Player_Node" method="_on_camera_body_entered"]

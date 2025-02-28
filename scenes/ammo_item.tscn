@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://dw08sp4b0yrw8"]
+
+[ext_resource type="Texture2D" uid="uid://cabyi73b4iwch" path="res://assets/sprites/ammo_item.png" id="1_a6lk2"]
+[ext_resource type="Script" path="res://scripts/ammo_item.gd" id="1_wnfuq"]
+[ext_resource type="FontFile" uid="uid://15mv8hlvoklm" path="res://assets/fonts/Play-Regular.ttf" id="2_xurya"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eltv2"]
+size = Vector2(184, 85)
+
+[sub_resource type="Animation" id="Animation_5xc1y"]
+resource_name = "new_animation"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -13)]
+}
+
+[sub_resource type="Animation" id="Animation_x7mfo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_61qag"]
+_data = {
+"RESET": SubResource("Animation_x7mfo"),
+"new_animation": SubResource("Animation_5xc1y")
+}
+
+[node name="ammo_item" type="Area2D"]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_wnfuq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_eltv2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3.28, 3.28)
+texture = ExtResource("1_a6lk2")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = -71.0
+offset_top = -14.0
+offset_right = -18.0
+offset_bottom = 44.0
+theme_override_colors/font_color = Color(0.618142, 0.922204, 0.518222, 1)
+theme_override_fonts/font = ExtResource("2_xurya")
+theme_override_font_sizes/font_size = 50
+text = "x5"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_61qag")
+}
+autoplay = "new_animation"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
