@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://de0kwungnqr2g"]
+[gd_scene load_steps=26 format=4 uid="uid://de0kwungnqr2g"]
 
 [ext_resource type="Texture2D" uid="uid://di8icfn3qthda" path="res://assets/sprites/Space Background.png" id="1_1qdhr"]
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_y772u"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://c364tf7gdw6mm" path="res://scenes/ship.tscn" id="3_e067m"]
 [ext_resource type="PackedScene" uid="uid://cwh364w0o6khj" path="res://scenes/next_level.tscn" id="4_sq37n"]
 [ext_resource type="PackedScene" uid="uid://b6wmx150no6s6" path="res://scenes/pause_menu.tscn" id="6_m77ub"]
-[ext_resource type="PackedScene" uid="uid://duvwyjw8iv07d" path="res://scenes/gui.tscn" id="7_6jpgw"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fwk6c"]
 texture = ExtResource("1_1qdhr")
@@ -193,8 +192,6 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.04259, 1.04259)
 theme_override_styles/panel = SubResource("StyleBoxTexture_fwk6c")
-
-[node name="GUI" parent="." instance=ExtResource("7_6jpgw")]
 
 [node name="background" type="TileMapLayer" parent="."]
 texture_filter = 1

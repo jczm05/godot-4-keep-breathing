@@ -10,7 +10,7 @@ var shootSpeed = 2.0
 @onready var current_ammo_label = get_node("/root/Gui/_current_ammo_label")
 var max_ammo = 12: set = set_max_ammo
 var _current_ammo = max_ammo
-var reserve_ammo := 24:set = set_reserve_ammo
+var reserve_ammo := 12:set = set_reserve_ammo
 @onready var reload_timer: Timer = $reloadTimer
 
 var _reload_time := 1.0: set = set_reload_time

@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://d1tmhku5n4fxl"]
+[gd_scene load_steps=10 format=3 uid="uid://d1tmhku5n4fxl"]
 
 [ext_resource type="PackedScene" uid="uid://d5b1ifgos4ow" path="res://scenes/elevator.tscn" id="1_1g438"]
 [ext_resource type="Texture2D" uid="uid://ccm3pt7let6x4" path="res://assets/prueba.png" id="1_ju6o2"]
 [ext_resource type="PackedScene" uid="uid://dvnh15ifeobdp" path="res://scenes/player.tscn" id="2_2tnkn"]
 [ext_resource type="Texture2D" uid="uid://cu4wrol8x5ve6" path="res://assets/lightbull.png" id="2_a16ar"]
 [ext_resource type="PackedScene" uid="uid://b6wmx150no6s6" path="res://scenes/pause_menu.tscn" id="3_utw8a"]
-[ext_resource type="PackedScene" uid="uid://duvwyjw8iv07d" path="res://scenes/gui.tscn" id="6_jigco"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rniel"]
 bg_color = Color(0, 0, 0, 1)
@@ -57,8 +56,6 @@ offset_right = 426.0
 offset_bottom = -135.0
 scale = Vector2(-26.1305, 14.4375)
 theme_override_styles/panel = SubResource("StyleBoxFlat_rniel")
-
-[node name="GUI" parent="." instance=ExtResource("6_jigco")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
