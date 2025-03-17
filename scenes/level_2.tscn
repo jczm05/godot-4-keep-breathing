@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://bwtu0m28yukwl"]
+[gd_scene load_steps=33 format=4 uid="uid://bwtu0m28yukwl"]
 
 [ext_resource type="Script" path="res://scripts/level_2.gd" id="1_6a71w"]
 [ext_resource type="Texture2D" uid="uid://hw5al138tofi" path="res://assets/sprites/charlevelfloorsboxes-v3.png" id="1_kavgi"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b6wmx150no6s6" path="res://scenes/pause_menu.tscn" id="5_fnmwk"]
 [ext_resource type="PackedScene" uid="uid://cwh364w0o6khj" path="res://scenes/next_level.tscn" id="6_c72ps"]
 [ext_resource type="PackedScene" uid="uid://dw08sp4b0yrw8" path="res://scenes/ammo_item.tscn" id="7_j4yly"]
+[ext_resource type="PackedScene" uid="uid://2aqjvjeawndb" path="res://scenes/bidon.tscn" id="8_7gufp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h1kd1"]
 texture = ExtResource("3_fwhj4")
@@ -349,6 +350,7 @@ tile_map_data = PackedByteArray("AAAYAPv/AQADAAIAAAAXAPv/AQADAAIAAAAWAPv/AQADAAI
 tile_set = SubResource("TileSet_tnkxs")
 
 [node name="ammo_item" parent="." instance=ExtResource("7_j4yly")]
+position = Vector2(770, -183)
 
 [node name="Cameras" type="Node" parent="."]
 
@@ -370,6 +372,26 @@ autoplay = "move"
 [node name="Camera3" parent="Cameras" instance=ExtResource("3_7n7hy")]
 position = Vector2(801, 253)
 rotation = 2.27738
+
+[node name="Bidones" type="Node" parent="."]
+
+[node name="bidon" parent="Bidones" instance=ExtResource("8_7gufp")]
+position = Vector2(231, -71)
+
+[node name="bidon2" parent="Bidones" instance=ExtResource("8_7gufp")]
+position = Vector2(408, 53)
+
+[node name="bidon3" parent="Bidones" instance=ExtResource("8_7gufp")]
+position = Vector2(789, -174)
+
+[node name="bidon4" parent="Bidones" instance=ExtResource("8_7gufp")]
+position = Vector2(771, -174)
+
+[node name="bidon5" parent="Bidones" instance=ExtResource("8_7gufp")]
+position = Vector2(753, -174)
+
+[node name="bidon6" parent="Bidones" instance=ExtResource("8_7gufp")]
+position = Vector2(736, -174)
 
 [node name="Player_Node" parent="." instance=ExtResource("1_ve1ex")]
 position = Vector2(-207, 3)

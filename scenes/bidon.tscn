@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://2aqjvjeawndb"]
+
+[ext_resource type="Texture2D" uid="uid://d0y5qipbbg1fr" path="res://assets/sprites/bidon.png" id="1_sdb6p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tqwgg"]
+size = Vector2(11.4286, 16.4286)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ol42j"]
+polygon = PackedVector2Array(-2.14286, -9.28571, -5.71429, -4.28571, -5.71429, 6.42857, -2.14286, 10, 2.14286, 10, 5.71429, 7.14286, 5.71429, -6.42857, 2.14286, -9.28571)
+
+[node name="bidon" type="Area2D"]
+scale = Vector2(1.4, 1.4)
+collision_layer = 4
+collision_mask = 7
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_sdb6p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5.10896e-07, 1.07143)
+shape = SubResource("RectangleShape2D_tqwgg")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+show_behind_parent = true
+occluder = SubResource("OccluderPolygon2D_ol42j")
+occluder_light_mask = 6
