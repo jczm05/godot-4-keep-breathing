@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://bwtu0m28yukwl"]
+[gd_scene load_steps=36 format=4 uid="uid://bwtu0m28yukwl"]
 
 [ext_resource type="Script" path="res://scripts/level_2.gd" id="1_6a71w"]
 [ext_resource type="Texture2D" uid="uid://hw5al138tofi" path="res://assets/sprites/charlevelfloorsboxes-v3.png" id="1_kavgi"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cwh364w0o6khj" path="res://scenes/next_level.tscn" id="6_c72ps"]
 [ext_resource type="PackedScene" uid="uid://dw08sp4b0yrw8" path="res://scenes/ammo_item.tscn" id="7_j4yly"]
 [ext_resource type="PackedScene" uid="uid://2aqjvjeawndb" path="res://scenes/bidon.tscn" id="8_7gufp"]
+[ext_resource type="PackedScene" uid="uid://wlevpmged6qj" path="res://scenes/enemy_reg.tscn" id="12_vkjdb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h1kd1"]
 texture = ExtResource("3_fwhj4")
@@ -152,6 +153,18 @@ _data = {
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_o5e1h"]
 gradient = SubResource("Gradient_qqqy0")
+
+[sub_resource type="Curve2D" id="Curve2D_kntf2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 6.25, 98.6111, 0, 0, 0, 0, -396.528, 95.1389, 0, 0, 0, 0, -394.445, 12.5, 0, 0, 0, 0, -222.917, 13.1944, 0, 0, 0, 0, -176.389, 13.1944, 0, 0, 0, 0, -171.528, -122.917, 0, 0, 0, 0, 6.25, -122.917, 0, 0, 0, 0, 6.25, 98.6111)
+}
+point_count = 8
+
+[sub_resource type="Curve2D" id="Curve2D_nn1rd"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 190, -230, 0, 0, 0, 0, 190, -38, 0, 0, 0, 0, 443, -36, 0, 0, 0, 0, 448, -192, 0, 0, 0, 0, 671, -196, 0, 0, 0, 0, 671, -235, 0, 0, 0, 0, 190, -230)
+}
+point_count = 7
 
 [node name="level_2" type="Node2D"]
 script = ExtResource("1_6a71w")
@@ -409,5 +422,32 @@ blend_mode = 1
 texture = SubResource("GradientTexture2D_o5e1h")
 
 [node name="pause_menu" parent="." instance=ExtResource("5_fnmwk")]
+
+[node name="enemy1" type="Path2D" parent="."]
+position = Vector2(756, 80)
+scale = Vector2(1.44, 1.44)
+curve = SubResource("Curve2D_kntf2")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="enemy1"]
+position = Vector2(-149.982, 97.2643)
+rotation = -1.5351
+progress = 156.24
+rotates = false
+
+[node name="Enemy_reg" parent="enemy1/PathFollow2D" instance=ExtResource("12_vkjdb")]
+position = Vector2(-0.0291061, 0.693848)
+rotation = 1.5708
+scale = Vector2(1, 1)
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_nn1rd")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(190, -230)
+rotation = 1.5708
+rotates = false
+
+[node name="Enemy_reg" parent="Path2D/PathFollow2D" instance=ExtResource("12_vkjdb")]
+rotation = -1.5708
 
 [connection signal="body_entered" from="Cameras/Camera" to="Player_Node" method="_on_camera_body_entered"]
