@@ -15,5 +15,3 @@ texture_filter = 1
 texture = ExtResource("1_qxfel")
 
 [node name="ShootTimer" type="Timer" parent="."]
-
-[node name="reloadTimer" type="Timer" parent="."]

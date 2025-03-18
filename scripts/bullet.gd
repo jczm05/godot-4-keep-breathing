@@ -5,6 +5,7 @@ class_name Bullet
 
 #You can use this signal to alert other nodes that the bullet hit something
 signal hit_something  
+signal hit(target)
 
 #Variable for keeping track of it's velocity        
 var velocity:Vector2    
@@ -29,3 +30,8 @@ func _physics_process(_delta):
 		hit_something.emit()
 		await get_tree().create_timer(0.05).timeout
 		queue_free() 
+
+func _on_body_entered(body):
+	if body.is_in_group("Player") or body.is_in_group("Enemy"):
+		emit_signal("hit", body) 
+		queue_free()  

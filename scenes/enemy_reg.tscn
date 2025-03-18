@@ -167,7 +167,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Enemy_reg" type="CharacterBody2D"]
+[node name="Enemy_reg" type="CharacterBody2D" groups=["Enemy"]]
 texture_filter = 1
 scale = Vector2(1.44, 1.44)
 script = ExtResource("1_cyqeb")
@@ -183,7 +183,7 @@ autoplay = "idle"
 frame_progress = 0.262527
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(-0.091468, -0.00936974)
+position = Vector2(-0.091468, 3.25488)
 rotation = 1.5708
 scale = Vector2(0.190002, 0.431821)
 energy = 3.75
@@ -196,13 +196,12 @@ scale = Vector2(0.768523, 1.30429)
 
 [node name="Polygon" type="CollisionPolygon2D" parent="DetectionArea"]
 position = Vector2(0.665422, -13.893)
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(-6.75, 12.429, 6.75, 12.429, 37.125, 53.6932, -37.125, 53.6932)
 
 [node name="ShootTimer" type="Timer" parent="."]
 
 [node name="EnemyGun" parent="." instance=ExtResource("4_3x662")]
-position = Vector2(0.694445, -0.694445)
+position = Vector2(0.694445, 2.5698)
 scale = Vector2(0.749999, 0.749999)
 
 [node name="IdleTimer" type="Timer" parent="."]

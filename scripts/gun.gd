@@ -17,6 +17,7 @@ var _reload_time := 1.0: set = set_reload_time
 
 func _process(_delta: float) -> void:
 	look_at(get_global_mouse_position())
+	bullet_spawn.look_at(get_global_mouse_position())
 	current_ammo_label.text = str(_current_ammo)
 	ammo_reserves_label.text = str(reserve_ammo)
 	if get_global_mouse_position().x > global_position.x:

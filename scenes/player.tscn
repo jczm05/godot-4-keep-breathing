@@ -5,9 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://bgrgomaplhcph" path="res://scenes/gun.tscn" id="3_cexbq"]
 [ext_resource type="Script" path="res://scripts/aim.gd" id="4_tgjw7"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ybre1"]
-radius = 5.0
-height = 38.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ovxwt"]
+size = Vector2(7.25429, 26)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pdnp1"]
 atlas = ExtResource("2_ki86a")
@@ -177,9 +176,9 @@ collision_mask = 5
 script = ExtResource("1_1nhvy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4, 32)
+position = Vector2(-9.85976e-08, -1)
 scale = Vector2(0.827097, 1)
-shape = SubResource("CapsuleShape2D_ybre1")
+shape = SubResource("RectangleShape2D_ovxwt")
 debug_color = Color(0.95855, 0.205221, 0, 0.42)
 
 [node name="line" type="Line2D" parent="."]
@@ -192,7 +191,7 @@ script = ExtResource("4_tgjw7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(5, 32)
+position = Vector2(1, 1)
 scale = Vector2(1.34625, 1.34625)
 sprite_frames = SubResource("SpriteFrames_u2lwj")
 animation = &"idle"
@@ -202,13 +201,15 @@ frame_progress = 0.106154
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 show_behind_parent = true
 texture_filter = 2
+position = Vector2(-4, -31)
 occluder = SubResource("OccluderPolygon2D_f7gfj")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(3.12499, 30.2083)
 scale = Vector2(4.55248, 3.56027)
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 
 [node name="gun" parent="." instance=ExtResource("3_cexbq")]
-position = Vector2(5, 34)
+position = Vector2(1, 2)
+
+[node name="Timer" type="Timer" parent="."]

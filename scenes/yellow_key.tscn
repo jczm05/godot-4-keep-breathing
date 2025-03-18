@@ -1,0 +1,80 @@
+[gd_scene load_steps=12 format=3 uid="uid://cqc01vyd7r1j6"]
+
+[ext_resource type="Script" path="res://scripts/key.gd" id="1_5ur5m"]
+[ext_resource type="Texture2D" uid="uid://b7tg0h3gcwtva" path="res://assets/sprites/yellow_key.png" id="2_5scli"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26d73"]
+atlas = ExtResource("2_5scli")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vimx"]
+atlas = ExtResource("2_5scli")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12tum"]
+atlas = ExtResource("2_5scli")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_juoy6"]
+atlas = ExtResource("2_5scli")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptegx"]
+atlas = ExtResource("2_5scli")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0j40"]
+atlas = ExtResource("2_5scli")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2khj"]
+atlas = ExtResource("2_5scli")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2w0an"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26d73")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vimx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12tum")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_juoy6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ptegx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0j40")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2khj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qg0se"]
+size = Vector2(14, 20)
+
+[node name="YellowKey" type="Node2D"]
+script = ExtResource("1_5ur5m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_2w0an")
+autoplay = "default"
+frame_progress = 0.407959
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_qg0se")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

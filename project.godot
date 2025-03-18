@@ -23,6 +23,7 @@ config/icon="res://assets/logo.png"
 
 MusicPlayer="*res://autoloads/music_player.tscn"
 Gui="*res://scenes/gui.tscn"
+Global="*res://scenes/global.tscn"
 
 [display]
 
@@ -40,6 +41,8 @@ window/canvas_textures/default_texture_filter=1
 Player=""
 Escenario=""
 Gun=""
+Bullet=""
+Enemy=""
 
 [input]
 
