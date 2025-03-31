@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://4v18mrejfpyb"]
 
-[ext_resource type="Script" path="res://scripts/yellow_door.gd" id="1_1yelx"]
+[ext_resource type="Script" uid="uid://c0kf7g3ppk25b" path="res://scripts/yellow_door.gd" id="1_1yelx"]
 [ext_resource type="Texture2D" uid="uid://d0tqfniotrkxq" path="res://assets/sprites/yellowdoor.png" id="1_wgrrq"]
 [ext_resource type="Texture2D" uid="uid://orhyqw477h6" path="res://assets/luz_2.png" id="3_8b5ng"]
 

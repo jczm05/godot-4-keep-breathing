@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var point_light_2d = $PointLight2D
 @onready var gun = $EnemyGun
 @onready var idle_timer = $IdleTimer  # Temporizador para el estado idle
+@onready var flash_timer: Timer = $flashTimer
 
 var speed: int = 30
 var player: Node2D = null
@@ -105,3 +106,10 @@ func _on_detection_area_body_exited(body):
 		can_fire = false  # Evita disparos cuando el jugador se va
 		state = "patrol"
 		print("Player lost, returning to patrol.")  # Debug
+
+func flash():
+	sprite.material.set_shader_param("flash_modifier", 1)
+	flash_timer.start()
+
+func _on_flash_timer_timeout() -> void:
+	sprite.material.set_shader_param("flash_modifier", 0)

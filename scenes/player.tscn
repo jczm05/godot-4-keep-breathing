@@ -1,9 +1,9 @@
 [gd_scene load_steps=26 format=3 uid="uid://dvnh15ifeobdp"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_1nhvy"]
+[ext_resource type="Script" uid="uid://bemkhtuwbf1g8" path="res://scripts/player.gd" id="1_1nhvy"]
 [ext_resource type="Texture2D" uid="uid://cl455q1ankiwa" path="res://assets/sprites/maint.png" id="2_ki86a"]
 [ext_resource type="PackedScene" uid="uid://bgrgomaplhcph" path="res://scenes/gun.tscn" id="3_cexbq"]
-[ext_resource type="Script" path="res://scripts/aim.gd" id="4_tgjw7"]
+[ext_resource type="Script" uid="uid://bvpm2gmsepex3" path="res://scripts/aim.gd" id="4_tgjw7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ovxwt"]
 size = Vector2(7.25429, 26)
@@ -213,3 +213,7 @@ position_smoothing_enabled = true
 position = Vector2(1, 2)
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_right = 4.0
+offset_bottom = 27.0

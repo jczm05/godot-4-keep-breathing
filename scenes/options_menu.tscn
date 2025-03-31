@@ -1,12 +1,15 @@
-[gd_scene load_steps=13 format=3 uid="uid://ckjpkqumq8myq"]
+[gd_scene load_steps=24 format=3 uid="uid://ckjpkqumq8myq"]
 
-[ext_resource type="Script" path="res://scripts/options_menu.gd" id="1_g1g0r"]
+[ext_resource type="Script" uid="uid://bt2nokexdubk0" path="res://scripts/options_menu.gd" id="1_g1g0r"]
 [ext_resource type="Texture2D" uid="uid://26tx118007ky" path="res://assets/fondomenu.png" id="2_h8nju"]
 [ext_resource type="Texture2D" uid="uid://c83sipbyp28ji" path="res://assets/camera light.png" id="4_s7x6j"]
 [ext_resource type="Texture2D" uid="uid://hdxpd64w4o3q" path="res://assets/menu.png" id="5_eu0rk"]
 [ext_resource type="FontFile" uid="uid://m4u57rspdbku" path="res://assets/fonts/Grith.otf" id="6_aur0i"]
 [ext_resource type="Texture2D" uid="uid://5hn8b8xik4fy" path="res://assets/logo.png" id="6_teo4c"]
-[ext_resource type="Script" path="res://scripts/option_button.gd" id="8_w06wo"]
+[ext_resource type="PackedScene" uid="uid://c5bnc23rny54h" path="res://scenes/filter/crt_filter.tscn" id="8_4xt00"]
+[ext_resource type="Script" uid="uid://b52uloqv4uonp" path="res://scripts/option_button.gd" id="8_w06wo"]
+[ext_resource type="Texture2D" uid="uid://djwlhagbm1jwl" path="res://assets/menunomask.png" id="9_2f1bn"]
+[ext_resource type="Texture2D" uid="uid://c5ck1pb3h3fyr" path="res://assets/menumask.png" id="10_i80p0"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t72i3"]
 texture = ExtResource("2_h8nju")
@@ -18,6 +21,68 @@ texture = ExtResource("2_h8nju")
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3382g"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5p3se"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flqon"]
+atlas = ExtResource("9_2f1bn")
+region = Rect2(0, 0, 64, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcqid"]
+atlas = ExtResource("9_2f1bn")
+region = Rect2(64, 0, 64, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ajci"]
+atlas = ExtResource("9_2f1bn")
+region = Rect2(128, 0, 64, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7b55j"]
+atlas = ExtResource("10_i80p0")
+region = Rect2(0, 0, 64, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pajh"]
+atlas = ExtResource("10_i80p0")
+region = Rect2(64, 0, 64, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7ex8"]
+atlas = ExtResource("10_i80p0")
+region = Rect2(128, 0, 64, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8gd2"]
+atlas = ExtResource("10_i80p0")
+region = Rect2(192, 0, 64, 94)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_smlwr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flqon")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcqid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ajci")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7b55j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pajh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7ex8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8gd2")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -70,6 +135,7 @@ texture = ExtResource("4_s7x6j")
 texture_scale = 1.9
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(0.462291, 0.462291, 0.462291, 1)
 texture_filter = 1
 position = Vector2(183, 151)
@@ -138,6 +204,16 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_5p3se")
 text = "FULLSCREEN"
 flat = true
 expand_icon = true
+
+[node name="CRT_filter" parent="." instance=ExtResource("8_4xt00")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(451, 499)
+scale = Vector2(22.6786, 22.6786)
+sprite_frames = SubResource("SpriteFrames_smlwr")
+animation = &"new_animation"
+autoplay = "new_animation"
 
 [connection signal="item_selected" from="HBoxContainer/Res_OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="item_selected" from="HBoxContainer/Res_OptionButton" to="HBoxContainer" method="_on_option_button_item_selected"]

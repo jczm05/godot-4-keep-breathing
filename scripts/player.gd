@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var progress_bar: ProgressBar = $ProgressBar
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var gun: Sprite2D = $gun
 @onready var timer: Timer = $Timer
@@ -7,11 +8,11 @@ extends CharacterBody2D
 var bullet = preload("res://scenes/bullet.tscn")
 
 @export var speed = 150
-var damage_count = 0
 
 func _ready():
-	var bullet_instance = bullet.instantiate()
-	bullet_instance.connect("hit", _on_bullet_hit)
+	progress_bar.set_value_no_signal(100)
+	if health == null:
+		print_debug("Helath no")
 
 func get_input():
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -39,17 +40,21 @@ func play_animations():
 		animated_sprite.play("idle")
 		gun.visible = true
 
-func take_damage(count: int):
-	print("¡Me han disparado! Vida restante: ", 3 - count)  # Debugging mejorado
-	damage_count += 1
-	health.play(str(count))
+func take_damage():
+	progress_bar.set_value_no_signal(progress_bar.value - 33)  # Restar vida
+	print("¡Me han disparado! Vida restante: ", progress_bar.value)
 
-	if count > 2:
+	if progress_bar.value <= 66 and progress_bar.value > 33:
+		health.play("2")  # Segunda fase de daño
+	elif progress_bar.value <= 33 and progress_bar.value > 0:
+		health.play("1")  # Última fase antes de morir
+	elif progress_bar.value <= 0:  # Si la vida llega a 0, el jugador muere
+		health.play("3")
 		animated_sprite.play("death")
-		await get_tree().create_timer(0.5).timeout  # En lugar de ralentizar el juego
+		await get_tree().create_timer(0.5).timeout  # Espera antes de eliminar al jugador
 		queue_free()
 		get_tree().reload_current_scene()  # Reiniciar nivel
 
 func _on_bullet_hit(body):
-	if body == self:
-		take_damage(damage_count)
+	if body.has_method("take_damage"):  # Asegurar que el objeto puede recibir daño
+		body.take_damage()

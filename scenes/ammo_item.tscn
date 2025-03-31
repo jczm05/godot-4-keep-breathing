@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dw08sp4b0yrw8"]
 
 [ext_resource type="Texture2D" uid="uid://cabyi73b4iwch" path="res://assets/sprites/ammo_item.png" id="1_a6lk2"]
-[ext_resource type="Script" path="res://scripts/ammo_item.gd" id="1_wnfuq"]
+[ext_resource type="Script" uid="uid://dshqicg05hbor" path="res://scripts/ammo_item.gd" id="1_wnfuq"]
 [ext_resource type="FontFile" uid="uid://15mv8hlvoklm" path="res://assets/fonts/Play-Regular.ttf" id="2_xurya"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eltv2"]

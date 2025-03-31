@@ -160,7 +160,7 @@ texture_filter = 1
 position = Vector2(202, 119)
 scale = Vector2(5.24, 5.24)
 sprite_frames = SubResource("SpriteFrames_fjs7s")
-animation = &"2"
+animation = &"3"
 autoplay = "0"
 
 [node name="Label" type="Label" parent="."]

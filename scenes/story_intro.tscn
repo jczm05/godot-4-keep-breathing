@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://ca6nry7cvjn2e"]
+[gd_scene load_steps=14 format=3 uid="uid://ca6nry7cvjn2e"]
 
-[ext_resource type="Script" path="res://scripts/story_intro.gd" id="1_si754"]
+[ext_resource type="Script" uid="uid://rc22lmtopre4" path="res://scripts/story_intro.gd" id="1_si754"]
 [ext_resource type="Texture2D" uid="uid://di8icfn3qthda" path="res://assets/sprites/Space Background.png" id="2_wcfg1"]
+[ext_resource type="PackedScene" uid="uid://c5bnc23rny54h" path="res://scenes/filter/crt_filter.tscn" id="4_82jpq"]
 [ext_resource type="FontFile" uid="uid://c8bx2tonerfbp" path="res://assets/fonts/Oswald-VariableFont_wght.ttf" id="7_oxchv"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t0c37"]
@@ -44,8 +45,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bjx6m"]
 _data = {
-"RESET": SubResource("Animation_o6mtc"),
-"activate": SubResource("Animation_og62r")
+&"RESET": SubResource("Animation_o6mtc"),
+&"activate": SubResource("Animation_og62r")
 }
 
 [sub_resource type="Animation" id="Animation_k4bo2"]
@@ -81,8 +82,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tq40v"]
 _data = {
-"RESET": SubResource("Animation_k4bo2"),
-"fade_in": SubResource("Animation_hfulo")
+&"RESET": SubResource("Animation_k4bo2"),
+&"fade_in": SubResource("Animation_hfulo")
 }
 
 [node name="Main Menu" type="Control"]
@@ -169,3 +170,5 @@ libraries = {
 "": SubResource("AnimationLibrary_tq40v")
 }
 autoplay = "fade_in"
+
+[node name="CRT_filter" parent="." instance=ExtResource("4_82jpq")]

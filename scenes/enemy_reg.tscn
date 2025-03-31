@@ -1,12 +1,19 @@
-[gd_scene load_steps=25 format=3 uid="uid://wlevpmged6qj"]
+[gd_scene load_steps=27 format=3 uid="uid://wlevpmged6qj"]
 
-[ext_resource type="Script" path="res://scripts/enemy_reg.gd" id="1_cyqeb"]
+[ext_resource type="Script" uid="uid://duerl2balwln5" path="res://scripts/enemy_reg.gd" id="1_cyqeb"]
 [ext_resource type="Texture2D" uid="uid://mutmijt12026" path="res://assets/sprites/enemigo.png" id="1_eqcyh"]
+[ext_resource type="Shader" uid="uid://chvlc65ge0iv4" path="res://shaders/enemy_reg.gdshader" id="1_sgdy3"]
 [ext_resource type="Texture2D" uid="uid://c83sipbyp28ji" path="res://assets/camera light.png" id="3_cbk01"]
 [ext_resource type="PackedScene" uid="uid://2klyhn174jji" path="res://scenes/enemy_gun.tscn" id="4_3x662"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j5ans"]
 size = Vector2(7, 25)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mttxr"]
+resource_local_to_scene = true
+shader = ExtResource("1_sgdy3")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_modifier = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jc8ec"]
 atlas = ExtResource("1_eqcyh")
@@ -177,6 +184,7 @@ position = Vector2(-0.5, 1.5)
 shape = SubResource("RectangleShape2D_j5ans")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_mttxr")
 sprite_frames = SubResource("SpriteFrames_4y5b0")
 animation = &"idle"
 autoplay = "idle"
@@ -205,3 +213,7 @@ position = Vector2(0.694445, 2.5698)
 scale = Vector2(0.749999, 0.749999)
 
 [node name="IdleTimer" type="Timer" parent="."]
+
+[node name="flashTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="flashTimer" to="." method="_on_flash_timer_timeout"]

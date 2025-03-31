@@ -1,7 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://cqc01vyd7r1j6"]
+[gd_scene load_steps=14 format=3 uid="uid://cqc01vyd7r1j6"]
 
-[ext_resource type="Script" path="res://scripts/key.gd" id="1_5ur5m"]
+[ext_resource type="Script" uid="uid://dsogp0jeot7nl" path="res://scripts/key.gd" id="1_5ur5m"]
 [ext_resource type="Texture2D" uid="uid://b7tg0h3gcwtva" path="res://assets/sprites/yellow_key.png" id="2_5scli"]
+[ext_resource type="Shader" uid="uid://ciw8trvil73y3" path="res://shaders/objects.gdshader" id="2_yb34k"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yhmge"]
+shader = ExtResource("2_yb34k")
+shader_parameter/shine_color = Color(1, 1, 1, 1)
+shader_parameter/shine_speed = 2.4
+shader_parameter/shine_size = 0.01
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_26d73"]
 atlas = ExtResource("2_5scli")
@@ -68,6 +75,7 @@ script = ExtResource("1_5ur5m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+material = SubResource("ShaderMaterial_yhmge")
 sprite_frames = SubResource("SpriteFrames_2w0an")
 autoplay = "default"
 frame_progress = 0.407959

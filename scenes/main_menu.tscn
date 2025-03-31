@@ -1,15 +1,78 @@
-[gd_scene load_steps=13 format=3 uid="uid://rlkdmi3bqrfs"]
+[gd_scene load_steps=22 format=3 uid="uid://rlkdmi3bqrfs"]
 
-[ext_resource type="Script" path="res://scripts/menu.gd" id="1_lclkw"]
+[ext_resource type="Script" uid="uid://drwgp0jfjf2vc" path="res://scripts/menu.gd" id="1_lclkw"]
 [ext_resource type="Texture2D" uid="uid://5hn8b8xik4fy" path="res://assets/logo.png" id="1_q5tdt"]
 [ext_resource type="Texture2D" uid="uid://26tx118007ky" path="res://assets/fondomenu.png" id="2_mwfcq"]
 [ext_resource type="Texture2D" uid="uid://cu4wrol8x5ve6" path="res://assets/lightbull.png" id="4_15m84"]
-[ext_resource type="Texture2D" uid="uid://hdxpd64w4o3q" path="res://assets/menu.png" id="4_d1cvy"]
-[ext_resource type="Texture2D" uid="uid://c83sipbyp28ji" path="res://assets/camera light.png" id="5_dse55"]
 [ext_resource type="FontFile" uid="uid://m4u57rspdbku" path="res://assets/fonts/Grith.otf" id="6_glrcm"]
+[ext_resource type="PackedScene" uid="uid://c5bnc23rny54h" path="res://scenes/filter/crt_filter.tscn" id="8_grkq8"]
+[ext_resource type="Texture2D" uid="uid://djwlhagbm1jwl" path="res://assets/menunomask.png" id="9_5dd4i"]
+[ext_resource type="Texture2D" uid="uid://c5ck1pb3h3fyr" path="res://assets/menumask.png" id="10_lgwnu"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_svmsp"]
 texture = ExtResource("2_mwfcq")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flqon"]
+atlas = ExtResource("9_5dd4i")
+region = Rect2(0, 0, 64, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcqid"]
+atlas = ExtResource("9_5dd4i")
+region = Rect2(64, 0, 64, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ajci"]
+atlas = ExtResource("9_5dd4i")
+region = Rect2(128, 0, 64, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7b55j"]
+atlas = ExtResource("10_lgwnu")
+region = Rect2(0, 0, 64, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pajh"]
+atlas = ExtResource("10_lgwnu")
+region = Rect2(64, 0, 64, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7ex8"]
+atlas = ExtResource("10_lgwnu")
+region = Rect2(128, 0, 64, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8gd2"]
+atlas = ExtResource("10_lgwnu")
+region = Rect2(192, 0, 64, 94)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hstxw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flqon")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcqid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ajci")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7b55j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pajh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7ex8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8gd2")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cqem8"]
 
@@ -49,6 +112,15 @@ scale = Vector2(57.5647, 34.3356)
 pivot_offset = Vector2(21.081, 19.8234)
 theme_override_styles/panel = SubResource("StyleBoxTexture_svmsp")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(451, 499)
+scale = Vector2(22.6786, 22.6786)
+sprite_frames = SubResource("SpriteFrames_hstxw")
+animation = &"new_animation"
+autoplay = "default"
+frame_progress = 0.264759
+
 [node name="TextureRect" type="TextureRect" parent="."]
 clip_contents = true
 custom_minimum_size = Vector2(1153, 650)
@@ -65,20 +137,6 @@ position = Vector2(203, -499)
 scale = Vector2(1.71707, 1.29512)
 energy = 16.0
 texture = ExtResource("4_15m84")
-
-[node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(206, 170)
-rotation = 1.56783
-scale = Vector2(1.91899, 2.65645)
-energy = 1.58
-texture = ExtResource("5_dse55")
-texture_scale = 1.9
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(183, 151)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("4_d1cvy")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 texture_filter = 1
@@ -139,3 +197,5 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_fj23p")
 text = "EXIT"
 flat = true
 alignment = 0
+
+[node name="CRT_filter" parent="." instance=ExtResource("8_grkq8")]

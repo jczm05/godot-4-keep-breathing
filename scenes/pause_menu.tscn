@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://b6wmx150no6s6"]
 
-[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_146p2"]
-[ext_resource type="Script" path="res://scripts/option_button.gd" id="1_503kn"]
+[ext_resource type="Script" uid="uid://1rllmm7d005o" path="res://scripts/pause_menu.gd" id="1_146p2"]
+[ext_resource type="Script" uid="uid://b52uloqv4uonp" path="res://scripts/option_button.gd" id="1_503kn"]
 [ext_resource type="Texture2D" uid="uid://cxo0n57xh3jel" path="res://assets/door2.png" id="2_3nhdj"]
 [ext_resource type="FontFile" uid="uid://c8bx2tonerfbp" path="res://assets/fonts/Oswald-VariableFont_wght.ttf" id="2_ewkws"]
 [ext_resource type="Texture2D" uid="uid://cspj6mane0f26" path="res://assets/door.png" id="3_4wjkg"]
@@ -71,8 +71,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3vrrf"]
 _data = {
-"RESET": SubResource("Animation_inn7r"),
-"new_animation": SubResource("Animation_w3nrw")
+&"RESET": SubResource("Animation_inn7r"),
+&"new_animation": SubResource("Animation_w3nrw")
 }
 
 [node name="pause_menu" type="CanvasLayer"]
