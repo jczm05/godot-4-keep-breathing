@@ -10,9 +10,9 @@ var bullet = preload("res://scenes/bullet.tscn")
 @export var speed = 150
 
 func _ready():
-	progress_bar.set_value_no_signal(100)
+	progress_bar.set_value_no_signal(Global.life)
 	if health == null:
-		print_debug("Helath no")
+		print_debug("Health no")
 
 func get_input():
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -22,6 +22,7 @@ func _physics_process(_delta):
 	get_input()
 	move_and_slide()
 	play_animations()
+	Global.life = progress_bar.value
 
 func play_animations():
 	if Input.is_action_pressed("move_left"):

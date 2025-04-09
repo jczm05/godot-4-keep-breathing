@@ -15,6 +15,11 @@ var reserve_ammo := 12:set = set_reserve_ammo
 
 var _reload_time := 1.0: set = set_reload_time
 
+func _ready() -> void:
+	_current_ammo = Global.ammo
+	reserve_ammo = Global.reserve_ammo
+
+
 func _process(_delta: float) -> void:
 	look_at(get_global_mouse_position())
 	bullet_spawn.look_at(get_global_mouse_position())
@@ -32,6 +37,9 @@ func _process(_delta: float) -> void:
 			reload()
 	elif Input.is_action_just_pressed("reload") and _current_ammo < max_ammo:
 		reload()
+	# save the ammo for the game save file
+	Global.ammo = _current_ammo
+	Global.reserve_ammo = reserve_ammo
 
 func fire():
 	if canShoot:

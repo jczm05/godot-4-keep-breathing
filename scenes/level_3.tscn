@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://d1tmhku5n4fxl"]
+[gd_scene load_steps=12 format=3 uid="uid://d1tmhku5n4fxl"]
 
 [ext_resource type="PackedScene" uid="uid://d5b1ifgos4ow" path="res://scenes/elevator.tscn" id="1_1g438"]
+[ext_resource type="Script" uid="uid://scer73cvlt38" path="res://scripts/level_3.gd" id="1_hhfj6"]
 [ext_resource type="Texture2D" uid="uid://ccm3pt7let6x4" path="res://assets/prueba.png" id="1_ju6o2"]
 [ext_resource type="PackedScene" uid="uid://dvnh15ifeobdp" path="res://scenes/player.tscn" id="2_2tnkn"]
 [ext_resource type="Texture2D" uid="uid://cu4wrol8x5ve6" path="res://assets/lightbull.png" id="2_a16ar"]
@@ -49,6 +50,7 @@ _data = {
 }
 
 [node name="level_3" type="Node2D"]
+script = ExtResource("1_hhfj6")
 
 [node name="Panel" type="Panel" parent="."]
 offset_left = 386.0
