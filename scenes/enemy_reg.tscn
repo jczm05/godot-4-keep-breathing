@@ -215,5 +215,9 @@ scale = Vector2(0.749999, 0.749999)
 [node name="IdleTimer" type="Timer" parent="."]
 
 [node name="flashTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="deadTimer" type="Timer" parent="."]
 
 [connection signal="timeout" from="flashTimer" to="." method="_on_flash_timer_timeout"]
+[connection signal="timeout" from="deadTimer" to="." method="_on_dead_timer_timeout"]

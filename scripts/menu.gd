@@ -5,7 +5,6 @@ extends Control
 @onready var options: Button = $VBoxContainer/Options
 @onready var exit: Button = $VBoxContainer/Exit
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Gui.hide()
 	MusicPlayer.play_menu_music()

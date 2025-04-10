@@ -7,7 +7,7 @@ extends Node2D
 
 var bullet = preload("res://scenes/bullet.tscn")
 @export var fire_rate: float = 1.5
-@export var bullet_speed: float = 20.0  # Ajustado para ser más rápido
+@export var bullet_speed: float = 700.0  # Ajustado para ser más rápido
 
 var owner_enemy: Node2D = null
 var can_fire: bool = true

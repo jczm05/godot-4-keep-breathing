@@ -92,9 +92,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7q8wu")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -194,9 +194,8 @@ texture_filter = 1
 position = Vector2(1, 1)
 scale = Vector2(1.34625, 1.34625)
 sprite_frames = SubResource("SpriteFrames_u2lwj")
-animation = &"idle"
+animation = &"death"
 autoplay = "idle"
-frame_progress = 0.106154
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 show_behind_parent = true
@@ -217,3 +216,4 @@ position = Vector2(1, 2)
 [node name="ProgressBar" type="ProgressBar" parent="."]
 offset_right = 4.0
 offset_bottom = 27.0
+fill_mode = 1

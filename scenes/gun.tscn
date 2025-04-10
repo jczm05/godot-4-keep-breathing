@@ -9,7 +9,7 @@ texture = ExtResource("1_i7ne3")
 script = ExtResource("2_gaaky")
 
 [node name="bullet_spawn" type="Marker2D" parent="."]
-position = Vector2(10, -3)
+position = Vector2(18, -3)
 scale = Vector2(0.720001, 0.720001)
 
 [node name="shootSpeedTimer" type="Timer" parent="."]
