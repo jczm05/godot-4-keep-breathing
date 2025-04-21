@@ -24,6 +24,7 @@ config/icon="res://assets/logo.png"
 MusicPlayer="*res://autoloads/music_player.tscn"
 Gui="*res://scenes/gui.tscn"
 Global="*res://scenes/global.tscn"
+SaveManager="*res://saves/save_manager.gd"
 
 [display]
 

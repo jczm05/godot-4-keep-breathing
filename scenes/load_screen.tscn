@@ -1,0 +1,159 @@
+[gd_scene load_steps=17 format=3 uid="uid://0fq6o6puuuf5"]
+
+[ext_resource type="Texture2D" uid="uid://b0qydf2ws2ew7" path="res://assets/dialogsquarepj.png" id="1_5bo00"]
+[ext_resource type="FontFile" uid="uid://15mv8hlvoklm" path="res://assets/fonts/Play-Regular.ttf" id="2_876g3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_km5y4"]
+bg_color = Color(0.0745098, 0.0745098, 0.117647, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lodmf"]
+atlas = ExtResource("1_5bo00")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1iqw"]
+atlas = ExtResource("1_5bo00")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kybu"]
+atlas = ExtResource("1_5bo00")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppqs1"]
+atlas = ExtResource("1_5bo00")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7uxc6"]
+atlas = ExtResource("1_5bo00")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0roh2"]
+atlas = ExtResource("1_5bo00")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xg20t"]
+atlas = ExtResource("1_5bo00")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfmna"]
+atlas = ExtResource("1_5bo00")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymv7j"]
+atlas = ExtResource("1_5bo00")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwy2q"]
+atlas = ExtResource("1_5bo00")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hbuga"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lodmf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1iqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kybu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppqs1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7uxc6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0roh2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xg20t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfmna")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymv7j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwy2q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qwxa1"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_d00xd"]
+color = Color(0.188235, 0.376471, 0.509804, 1)
+thickness = 10
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_km5y4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(360, 384)
+scale = Vector2(9.26563, 9.26563)
+sprite_frames = SubResource("SpriteFrames_hbuga")
+autoplay = "default"
+frame_progress = 0.707803
+
+[node name="Panel3" type="Panel" parent="."]
+offset_left = 65.0
+offset_top = 696.0
+offset_right = 657.0
+offset_bottom = 991.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qwxa1")
+
+[node name="PanelContainer" type="PanelContainer" parent="Panel3"]
+offset_left = 1.0
+offset_right = 591.0
+offset_bottom = 845.0
+theme_override_styles/panel = SubResource("StyleBoxLine_d00xd")
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 2
+offset_left = 731.0
+offset_top = 97.0
+offset_right = 1823.0
+offset_bottom = 992.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qwxa1")
+
+[node name="PanelContainer" type="PanelContainer" parent="Panel2"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -9.0
+offset_right = 1091.0
+offset_bottom = 841.0
+theme_override_styles/panel = SubResource("StyleBoxLine_d00xd")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 718.0
+offset_right = 620.0
+offset_bottom = 959.0
+theme_override_colors/font_color = Color(0.188235, 0.376471, 0.509804, 1)
+theme_override_fonts/font = ExtResource("2_876g3")
+theme_override_font_sizes/font_size = 50
+text = ">THE MERCH
+>NAME: <CENSURED>
+>AGE: UNKNOW
+>ORIGIN: <CENSURED>"
