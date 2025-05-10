@@ -1,7 +1,14 @@
-[gd_scene load_steps=17 format=3 uid="uid://0fq6o6puuuf5"]
+[gd_scene load_steps=43 format=3 uid="uid://0fq6o6puuuf5"]
 
 [ext_resource type="Texture2D" uid="uid://b0qydf2ws2ew7" path="res://assets/dialogsquarepj.png" id="1_5bo00"]
+[ext_resource type="Script" uid="uid://8fvrygw0jh3q" path="res://scripts/load_screen.gd" id="1_7uxc6"]
 [ext_resource type="FontFile" uid="uid://15mv8hlvoklm" path="res://assets/fonts/Play-Regular.ttf" id="2_876g3"]
+[ext_resource type="FontFile" uid="uid://m4u57rspdbku" path="res://assets/fonts/Grith.otf" id="3_876g3"]
+[ext_resource type="Texture2D" uid="uid://ds8mmjw47sqj" path="res://assets/health_perfect.png" id="4_ppqs1"]
+[ext_resource type="Texture2D" uid="uid://bjare7vbydgld" path="res://assets/health_middle.png" id="5_7uxc6"]
+[ext_resource type="Texture2D" uid="uid://c2pt2k0kapsj" path="res://assets/health_bad.png" id="6_0roh2"]
+[ext_resource type="Texture2D" uid="uid://v3k2d5bqovvi" path="res://assets/health_dead.png" id="7_xg20t"]
+[ext_resource type="Texture2D" uid="uid://dl0m0cle65nbu" path="res://assets/ammo.png" id="8_dfmna"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_km5y4"]
 bg_color = Color(0.0745098, 0.0745098, 0.117647, 1)
@@ -90,6 +97,145 @@ animations = [{
 color = Color(0.188235, 0.376471, 0.509804, 1)
 thickness = 10
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ab883"]
+atlas = ExtResource("4_ppqs1")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2d1ls"]
+atlas = ExtResource("4_ppqs1")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gqh7"]
+atlas = ExtResource("4_ppqs1")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70buy"]
+atlas = ExtResource("4_ppqs1")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cg5vf"]
+atlas = ExtResource("5_7uxc6")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvrio"]
+atlas = ExtResource("5_7uxc6")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgr1u"]
+atlas = ExtResource("5_7uxc6")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4taa2"]
+atlas = ExtResource("5_7uxc6")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4mn8"]
+atlas = ExtResource("6_0roh2")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtbm2"]
+atlas = ExtResource("6_0roh2")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arf2s"]
+atlas = ExtResource("6_0roh2")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvj8v"]
+atlas = ExtResource("6_0roh2")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_loqu4"]
+atlas = ExtResource("7_xg20t")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s46rb"]
+atlas = ExtResource("7_xg20t")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3w0lj"]
+atlas = ExtResource("7_xg20t")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80ghs"]
+atlas = ExtResource("7_xg20t")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ymv7j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ab883")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2d1ls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5gqh7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_70buy")
+}],
+"loop": true,
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cg5vf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvrio")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgr1u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4taa2")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4mn8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtbm2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arf2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvj8v")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_loqu4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s46rb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3w0lj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80ghs")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_km5y4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7uxc6"]
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -97,6 +243,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_7uxc6")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -159,3 +306,128 @@ text = ">THE MERCH
 >NAME: <CENSURED>
 >AGE: UNKNOW
 >ORIGIN: <CENSURED>"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 798.0
+offset_top = 356.0
+offset_right = 1117.0
+offset_bottom = 597.0
+theme_override_colors/font_color = Color(0.188235, 0.376471, 0.509804, 1)
+theme_override_fonts/font = ExtResource("2_876g3")
+theme_override_font_sizes/font_size = 50
+text = "LEVEL:
+KEYS FOUND:"
+
+[node name="LVL" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1120.0
+offset_top = 356.0
+offset_right = 1439.0
+offset_bottom = 414.0
+theme_override_colors/font_color = Color(0.188235, 0.376471, 0.509804, 1)
+theme_override_fonts/font = ExtResource("2_876g3")
+theme_override_font_sizes/font_size = 50
+
+[node name="KFOUND" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1120.0
+offset_top = 412.0
+offset_right = 1439.0
+offset_bottom = 470.0
+theme_override_colors/font_color = Color(0.188235, 0.376471, 0.509804, 1)
+theme_override_fonts/font = ExtResource("2_876g3")
+theme_override_font_sizes/font_size = 50
+
+[node name="health_bar" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(965, 220)
+scale = Vector2(5.24, 5.24)
+sprite_frames = SubResource("SpriteFrames_ymv7j")
+animation = &"1"
+autoplay = "0"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1298.76, 201.88)
+scale = Vector2(4.68, 4.68)
+texture = ExtResource("8_dfmna")
+
+[node name="Label3" type="Label" parent="."]
+texture_filter = 1
+offset_left = 1267.0
+offset_top = 158.0
+offset_right = 1348.0
+offset_bottom = 240.0
+theme_override_colors/font_color = Color(0, 0.815686, 0.772549, 1)
+theme_override_colors/font_shadow_color = Color(0, 1, 0.729412, 1)
+theme_override_colors/font_outline_color = Color(0, 0.823529, 0.701961, 1)
+theme_override_fonts/font = ExtResource("2_876g3")
+theme_override_font_sizes/font_size = 50
+text = "x"
+
+[node name="Label4" type="Label" parent="."]
+texture_filter = 1
+offset_left = 1391.0
+offset_top = 176.0
+offset_right = 1472.0
+offset_bottom = 258.0
+rotation = 0.774532
+theme_override_colors/font_color = Color(0, 0.815686, 0.772549, 1)
+theme_override_colors/font_shadow_color = Color(0, 1, 0.729412, 1)
+theme_override_colors/font_outline_color = Color(0, 0.823529, 0.701961, 1)
+theme_override_fonts/font = ExtResource("2_876g3")
+theme_override_font_sizes/font_size = 65
+text = "|"
+
+[node name="_current_ammo_label" type="Label" parent="."]
+texture_filter = 1
+offset_left = 1291.76
+offset_top = 154.88
+offset_right = 1372.76
+offset_bottom = 236.88
+theme_override_colors/font_color = Color(0, 0.815686, 0.772549, 1)
+theme_override_colors/font_shadow_color = Color(0, 1, 0.729412, 1)
+theme_override_colors/font_outline_color = Color(0, 0.823529, 0.701961, 1)
+theme_override_fonts/font = ExtResource("2_876g3")
+theme_override_font_sizes/font_size = 65
+
+[node name="_ammo_reserves_label" type="Label" parent="."]
+texture_filter = 1
+offset_left = 1371.76
+offset_top = 205.88
+offset_right = 1452.76
+offset_bottom = 287.88
+theme_override_colors/font_color = Color(0, 0.815686, 0.772549, 1)
+theme_override_colors/font_shadow_color = Color(0, 1, 0.729412, 1)
+theme_override_colors/font_outline_color = Color(0, 0.823529, 0.701961, 1)
+theme_override_fonts/font = ExtResource("2_876g3")
+theme_override_font_sizes/font_size = 45
+
+[node name="Continue" type="Button" parent="."]
+offset_left = 1447.0
+offset_top = 897.0
+offset_right = 1646.0
+offset_bottom = 985.0
+theme_override_colors/font_hover_color = Color(0.188235, 0.376471, 0.509804, 1)
+theme_override_colors/font_pressed_color = Color(0.364706, 0.364706, 0.364706, 1)
+theme_override_fonts/font = ExtResource("3_876g3")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = SubResource("StyleBoxEmpty_km5y4")
+text = "CONTINUE"
+flat = true
+alignment = 0
+
+[node name="Exit" type="Button" parent="."]
+offset_left = 938.0
+offset_top = 898.0
+offset_right = 1037.0
+offset_bottom = 986.0
+theme_override_colors/font_hover_color = Color(0.188235, 0.376471, 0.509804, 1)
+theme_override_colors/font_pressed_color = Color(0.362829, 0.362829, 0.362829, 1)
+theme_override_fonts/font = ExtResource("3_876g3")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7uxc6")
+text = "EXIT"
+flat = true
+alignment = 0
