@@ -116,6 +116,7 @@ autoplay = "default"
 frame_progress = 0.707803
 
 [node name="Panel3" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 65.0
 offset_top = 696.0
 offset_right = 657.0
@@ -123,6 +124,7 @@ offset_bottom = 991.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_qwxa1")
 
 [node name="PanelContainer" type="PanelContainer" parent="Panel3"]
+layout_mode = 0
 offset_left = 1.0
 offset_right = 591.0
 offset_bottom = 845.0

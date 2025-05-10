@@ -214,6 +214,7 @@ position = Vector2(1, 2)
 [node name="Timer" type="Timer" parent="."]
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
 offset_right = 4.0
 offset_bottom = 27.0
 fill_mode = 1
