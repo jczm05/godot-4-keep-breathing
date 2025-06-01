@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgrgomaplhcph"]
+[gd_scene load_steps=4 format=3 uid="uid://bgrgomaplhcph"]
 
 [ext_resource type="Texture2D" uid="uid://c0dycxa11x2yu" path="res://assets/sprites/gun.png" id="1_i7ne3"]
 [ext_resource type="Script" uid="uid://ctkkit881bmri" path="res://scripts/gun.gd" id="2_gaaky"]
+[ext_resource type="AudioStream" uid="uid://dufhemoi1yfg6" path="res://music/FX/herogun.mp3" id="3_gp1hk"]
 
 [node name="gun" type="Sprite2D" groups=["Gun"]]
 texture_filter = 1
@@ -15,5 +16,9 @@ scale = Vector2(0.720001, 0.720001)
 [node name="shootSpeedTimer" type="Timer" parent="."]
 
 [node name="reloadTimer" type="Timer" parent="."]
+
+[node name="shootsound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_gp1hk")
+volume_db = -11.243
 
 [connection signal="timeout" from="shootSpeedTimer" to="." method="_on_shoot_speed_timer_timeout"]

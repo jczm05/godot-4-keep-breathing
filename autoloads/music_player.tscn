@@ -6,3 +6,4 @@
 script = ExtResource("1_rx7pw")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
+volume_db = -21.549

@@ -4,6 +4,8 @@ extends Control
 @onready var continue_button: Button = $VBoxContainer/Continue
 @onready var options: Button = $VBoxContainer/Options
 @onready var exit: Button = $VBoxContainer/Exit
+@onready var clicksound: AudioStreamPlayer = $clicksound
+@onready var startsound: AudioStreamPlayer = $startsound
 
 func _ready() -> void:
 	Gui.hide()
@@ -14,6 +16,7 @@ func _ready() -> void:
 	continue_button.button_down.connect(on_continue_pressed)
 
 func on_continue_pressed() -> void:
+	clicksound.play()
 	var path = "user://savegame.json"
 	var loaded_data = SaveManager.read_save()
 	if FileAccess.file_exists(path):
@@ -23,11 +26,14 @@ func on_continue_pressed() -> void:
 		
 
 func on_options_pressed() -> void:
+	clicksound.play()
 	get_tree().change_scene_to_file("res://scenes/options_menu.tscn")
 
 func on_start_pressed() -> void:
+	startsound.play()
 	get_tree().change_scene_to_file("res://scenes/story_intro.tscn")
 	
 
 func on_exit_pressed() -> void:
+	clicksound.play()
 	get_tree().quit()

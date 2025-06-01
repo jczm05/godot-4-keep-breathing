@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dw08sp4b0yrw8"]
+[gd_scene load_steps=6 format=3 uid="uid://dw08sp4b0yrw8"]
 
 [ext_resource type="Texture2D" uid="uid://cabyi73b4iwch" path="res://assets/sprites/ammo_item.png" id="1_a6lk2"]
 [ext_resource type="Script" uid="uid://dshqicg05hbor" path="res://scripts/ammo_item.gd" id="1_wnfuq"]
 [ext_resource type="FontFile" uid="uid://15mv8hlvoklm" path="res://assets/fonts/Play-Regular.ttf" id="2_xurya"]
+[ext_resource type="AudioStream" uid="uid://cxj015iargulm" path="res://music/FX/start.wav" id="4_uady3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eltv2"]
 size = Vector2(184, 85)
@@ -30,5 +31,9 @@ theme_override_colors/font_color = Color(0.618142, 0.922204, 0.518222, 1)
 theme_override_fonts/font = ExtResource("2_xurya")
 theme_override_font_sizes/font_size = 50
 text = "x5"
+
+[node name="sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_uady3")
+volume_db = 9.37
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

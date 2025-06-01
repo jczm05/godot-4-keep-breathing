@@ -4,6 +4,7 @@ extends Node2D
 
 @onready var bullet_spawn: Marker2D = $bullet_spawn
 @onready var shoot_timer: Timer = $ShootTimer  # Timer para cooldown
+@onready var shootsound: AudioStreamPlayer = $shootsound
 
 var bullet = preload("res://scenes/bullet.tscn")
 @export var fire_rate: float = 1.5
@@ -48,6 +49,7 @@ func shoot():
 		bullet_instance.global_position = bullet_spawn.global_position
 		var direction = (player_position - bullet_spawn.global_position).normalized()
 		bullet_instance.rotation = direction.angle()
+		shootsound.play()
 		
 		if bullet_instance.has_method("launch"):
 			bullet_instance.launch(direction, bullet_speed)

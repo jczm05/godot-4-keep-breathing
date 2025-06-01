@@ -10,6 +10,8 @@ var lvl_text
 @onready var continue_button: Button = $Continue
 var life
 @onready var exit: Button = $Exit
+@onready var clicksound: AudioStreamPlayer = $clicksound
+@onready var startsound: AudioStreamPlayer = $startsound
 
 func _ready() -> void:
 	loaded_data = SaveManager.read_save()
@@ -26,9 +28,11 @@ func _ready() -> void:
 	exit.button_down.connect(on_exit_pressed)
 
 func on_continue_pressed() -> void:
+	startsound.play()
 	get_tree().change_scene_to_file(loaded_data.get("level"))
 
 func on_exit_pressed():
+	clicksound.play()
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 func health_animation():

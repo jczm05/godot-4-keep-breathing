@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ckjpkqumq8myq"]
+[gd_scene load_steps=25 format=3 uid="uid://ckjpkqumq8myq"]
 
 [ext_resource type="Script" uid="uid://bt2nokexdubk0" path="res://scripts/options_menu.gd" id="1_g1g0r"]
 [ext_resource type="Texture2D" uid="uid://26tx118007ky" path="res://assets/fondomenu.png" id="2_h8nju"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://b52uloqv4uonp" path="res://scripts/option_button.gd" id="8_w06wo"]
 [ext_resource type="Texture2D" uid="uid://djwlhagbm1jwl" path="res://assets/menunomask.png" id="9_2f1bn"]
 [ext_resource type="Texture2D" uid="uid://c5ck1pb3h3fyr" path="res://assets/menumask.png" id="10_i80p0"]
+[ext_resource type="AudioStream" uid="uid://dia2cgmb8d5wx" path="res://music/FX/menu_select.wav" id="11_i80p0"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t72i3"]
 texture = ExtResource("2_h8nju")
@@ -214,6 +215,9 @@ scale = Vector2(22.6786, 22.6786)
 sprite_frames = SubResource("SpriteFrames_smlwr")
 animation = &"new_animation"
 autoplay = "new_animation"
+
+[node name="clicksound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_i80p0")
 
 [connection signal="item_selected" from="HBoxContainer/Res_OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="item_selected" from="HBoxContainer/Res_OptionButton" to="HBoxContainer" method="_on_option_button_item_selected"]

@@ -12,6 +12,7 @@ var max_ammo = 12: set = set_max_ammo
 var _current_ammo = max_ammo
 var reserve_ammo := 12:set = set_reserve_ammo
 @onready var reload_timer: Timer = $reloadTimer
+@onready var shootsound: AudioStreamPlayer = $shootsound
 
 var _reload_time := 1.0: set = set_reload_time
 
@@ -47,6 +48,7 @@ func fire():
 		shoot_speed_timer.start()
 		_current_ammo -= 1
 		var bullet_instance = bullet.instantiate()
+		shootsound.play()
 		bullet_instance.global_position = bullet_spawn.global_position
 		current_ammo_label.text = str(_current_ammo)
 		var mouse_pos = get_global_mouse_position()

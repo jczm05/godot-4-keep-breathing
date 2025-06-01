@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://0fq6o6puuuf5"]
+[gd_scene load_steps=45 format=3 uid="uid://0fq6o6puuuf5"]
 
 [ext_resource type="Texture2D" uid="uid://b0qydf2ws2ew7" path="res://assets/dialogsquarepj.png" id="1_5bo00"]
 [ext_resource type="Script" uid="uid://8fvrygw0jh3q" path="res://scripts/load_screen.gd" id="1_7uxc6"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://c2pt2k0kapsj" path="res://assets/health_bad.png" id="6_0roh2"]
 [ext_resource type="Texture2D" uid="uid://v3k2d5bqovvi" path="res://assets/health_dead.png" id="7_xg20t"]
 [ext_resource type="Texture2D" uid="uid://dl0m0cle65nbu" path="res://assets/ammo.png" id="8_dfmna"]
+[ext_resource type="AudioStream" uid="uid://dia2cgmb8d5wx" path="res://music/FX/menu_select.wav" id="10_0roh2"]
+[ext_resource type="AudioStream" uid="uid://cxj015iargulm" path="res://music/FX/start.wav" id="11_xg20t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_km5y4"]
 bg_color = Color(0.0745098, 0.0745098, 0.117647, 1)
@@ -355,6 +357,7 @@ texture = ExtResource("8_dfmna")
 
 [node name="Label3" type="Label" parent="."]
 texture_filter = 1
+layout_mode = 0
 offset_left = 1267.0
 offset_top = 158.0
 offset_right = 1348.0
@@ -368,6 +371,7 @@ text = "x"
 
 [node name="Label4" type="Label" parent="."]
 texture_filter = 1
+layout_mode = 0
 offset_left = 1391.0
 offset_top = 176.0
 offset_right = 1472.0
@@ -382,6 +386,7 @@ text = "|"
 
 [node name="_current_ammo_label" type="Label" parent="."]
 texture_filter = 1
+layout_mode = 0
 offset_left = 1291.76
 offset_top = 154.88
 offset_right = 1372.76
@@ -394,6 +399,7 @@ theme_override_font_sizes/font_size = 65
 
 [node name="_ammo_reserves_label" type="Label" parent="."]
 texture_filter = 1
+layout_mode = 0
 offset_left = 1371.76
 offset_top = 205.88
 offset_right = 1452.76
@@ -405,6 +411,7 @@ theme_override_fonts/font = ExtResource("2_876g3")
 theme_override_font_sizes/font_size = 45
 
 [node name="Continue" type="Button" parent="."]
+layout_mode = 0
 offset_left = 1447.0
 offset_top = 897.0
 offset_right = 1646.0
@@ -419,6 +426,7 @@ flat = true
 alignment = 0
 
 [node name="Exit" type="Button" parent="."]
+layout_mode = 0
 offset_left = 938.0
 offset_top = 898.0
 offset_right = 1037.0
@@ -431,3 +439,9 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_7uxc6")
 text = "EXIT"
 flat = true
 alignment = 0
+
+[node name="clicksound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_0roh2")
+
+[node name="startsound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_xg20t")

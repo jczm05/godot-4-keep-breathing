@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://2klyhn174jji"]
+[gd_scene load_steps=4 format=3 uid="uid://2klyhn174jji"]
 
 [ext_resource type="Texture2D" uid="uid://bw6rbhve30kxa" path="res://assets/sprites/enemygun.png" id="1_qxfel"]
 [ext_resource type="Script" uid="uid://d2lgwpr0uw4dk" path="res://scripts/enemy_gun.gd" id="1_uos07"]
+[ext_resource type="AudioStream" uid="uid://0qalgn0t5t3f" path="res://music/FX/enemygun.mp3" id="3_me4q0"]
 
 [node name="EnemyGun" type="Node2D"]
 script = ExtResource("1_uos07")
@@ -15,3 +16,7 @@ texture_filter = 1
 texture = ExtResource("1_qxfel")
 
 [node name="ShootTimer" type="Timer" parent="."]
+
+[node name="shootsound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_me4q0")
+volume_db = -14.054
