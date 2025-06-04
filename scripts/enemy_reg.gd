@@ -13,7 +13,7 @@ var is_dead = false
 
 var speed: int = 30
 var player: Node2D = null
-var state: String = "patrol"
+var state: String = "idle" #cambiar y mirar
 var can_fire: bool = false
 var reached_end: bool = false
 

@@ -139,7 +139,7 @@ flat = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Continue"]
 libraries = {
-"": SubResource("AnimationLibrary_bjx6m")
+&"": SubResource("AnimationLibrary_bjx6m")
 }
 autoplay = "activate"
 
@@ -167,7 +167,7 @@ fit_content = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="RichTextLabel"]
 libraries = {
-"": SubResource("AnimationLibrary_tq40v")
+&"": SubResource("AnimationLibrary_tq40v")
 }
 autoplay = "fade_in"
 

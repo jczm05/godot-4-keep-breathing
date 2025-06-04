@@ -93,3 +93,9 @@ libraries = {
 autoplay = "new_animation"
 
 [node name="CRT_filter" parent="." instance=ExtResource("6_m7hd7")]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 20.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
