@@ -14,8 +14,6 @@ var owner_enemy: Node2D = null
 var can_fire: bool = true
 
 func _ready():
-	if not shoot_timer:
-		print("ERROR: ShootTimer not found!")
 	
 	shoot_timer.wait_time = fire_rate
 	shoot_timer.timeout.connect(_reset_fire)
@@ -61,11 +59,8 @@ func shoot():
 		if bullet_layer:
 			bullet_layer.add_child(bullet_instance)
 		else:
-			print("WARNING: BulletLayer not found, adding bullet to root.")
 			get_tree().root.add_child(bullet_instance)
 
-		print("Enemy fired a bullet!")
 
 func _reset_fire():
-	print("Fire cooldown reset!")
 	can_fire = true

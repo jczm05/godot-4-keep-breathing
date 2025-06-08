@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://duvwyjw8iv07d"]
+[gd_scene load_steps=30 format=3 uid="uid://duvwyjw8iv07d"]
 
 [ext_resource type="Texture2D" uid="uid://c2pt2k0kapsj" path="res://assets/health_bad.png" id="1_ja4jw"]
 [ext_resource type="Texture2D" uid="uid://v3k2d5bqovvi" path="res://assets/health_dead.png" id="2_nklw4"]
@@ -6,7 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://bjare7vbydgld" path="res://assets/health_middle.png" id="4_6jhy7"]
 [ext_resource type="Texture2D" uid="uid://dl0m0cle65nbu" path="res://assets/ammo.png" id="5_e65df"]
 [ext_resource type="FontFile" uid="uid://15mv8hlvoklm" path="res://assets/fonts/Play-Regular.ttf" id="6_hej2n"]
+[ext_resource type="Script" uid="uid://ctbi7gsr8aw0i" path="res://scripts/fps.gd" id="8_4yt8u"]
+[ext_resource type="FontFile" uid="uid://c10gwpuhrlstr" path="res://assets/fonts/SourceCodePro-VariableFont_wght.ttf" id="8_p54wi"]
 [ext_resource type="Texture2D" uid="uid://cu82pbk2rgn8b" path="res://assets/yellow_key_inv.png" id="8_yjxi2"]
+[ext_resource type="Texture2D" uid="uid://iihb0q4estmn" path="res://assets/green_key.png" id="10_xki8e"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x64cr"]
 
@@ -145,6 +148,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p54wi"]
+bg_color = Color(0, 0, 0, 1)
+
 [node name="GUI" type="CanvasLayer"]
 
 [node name="Panel" type="Panel" parent="."]
@@ -233,3 +239,25 @@ texture_filter = 1
 position = Vector2(702, 74)
 scale = Vector2(3.28, 3.28)
 texture = ExtResource("8_yjxi2")
+
+[node name="fps" type="Label" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.950138, 0.915076, 0, 1)
+theme_override_fonts/font = ExtResource("8_p54wi")
+theme_override_styles/normal = SubResource("StyleBoxFlat_p54wi")
+script = ExtResource("8_4yt8u")
+
+[node name="GreenKey" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(758, 74)
+scale = Vector2(3.28, 3.28)
+texture = ExtResource("10_xki8e")

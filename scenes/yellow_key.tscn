@@ -78,7 +78,8 @@ texture_filter = 1
 material = SubResource("ShaderMaterial_yhmge")
 sprite_frames = SubResource("SpriteFrames_2w0an")
 autoplay = "default"
-frame_progress = 0.407959
+frame = 3
+frame_progress = 0.125854
 
 [node name="Area2D" type="Area2D" parent="."]
 

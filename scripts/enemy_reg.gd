@@ -138,7 +138,5 @@ func take_damage():
 		sprite.play("dead")
 		dead_timer.start()
 		
-
-
 func _on_dead_timer_timeout() -> void:
 	queue_free()

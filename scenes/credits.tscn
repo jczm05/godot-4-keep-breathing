@@ -1,0 +1,244 @@
+[gd_scene load_steps=22 format=3 uid="uid://dofgai5d3vcv3"]
+
+[ext_resource type="Script" uid="uid://du37bytnmi5vh" path="res://scripts/credits.gd" id="1_0ctdu"]
+[ext_resource type="FontFile" uid="uid://15mv8hlvoklm" path="res://assets/fonts/Play-Regular.ttf" id="1_2ckv8"]
+[ext_resource type="FontFile" uid="uid://m4u57rspdbku" path="res://assets/fonts/Grith.otf" id="2_0ctdu"]
+[ext_resource type="Texture2D" uid="uid://hdxpd64w4o3q" path="res://assets/menu.png" id="2_2fbfq"]
+[ext_resource type="Texture2D" uid="uid://cm6c1riukmf6v" path="res://assets/sprites/nave.png" id="2_8gwij"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2fbfq"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mah5v"]
+atlas = ExtResource("2_8gwij")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kyhnv"]
+atlas = ExtResource("2_8gwij")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ooihk"]
+atlas = ExtResource("2_8gwij")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ih6pn"]
+atlas = ExtResource("2_8gwij")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lgdl"]
+atlas = ExtResource("2_8gwij")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6kru"]
+atlas = ExtResource("2_8gwij")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qbfqv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mah5v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kyhnv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ooihk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ih6pn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lgdl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6kru")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_x5q3x"]
+resource_name = "move"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-174, 240), Vector2(2054, 240)]
+}
+
+[sub_resource type="Animation" id="Animation_nmdnh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-174, 240)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_83ncp"]
+_data = {
+&"RESET": SubResource("Animation_nmdnh"),
+&"move": SubResource("Animation_x5q3x")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ctdu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2fbfq"]
+
+[sub_resource type="Animation" id="Animation_o6mtc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_og62r"]
+resource_name = "activate"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bjx6m"]
+_data = {
+&"RESET": SubResource("Animation_o6mtc"),
+&"activate": SubResource("Animation_og62r")
+}
+
+[node name="credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0ctdu")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2fbfq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-174, 240)
+scale = Vector2(4.4, 4.4)
+sprite_frames = SubResource("SpriteFrames_qbfqv")
+autoplay = "default"
+frame_progress = 0.451851
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_83ncp")
+}
+autoplay = "move"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1662, 764)
+texture = ExtResource("2_2fbfq")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -728.5
+offset_top = -218.0
+offset_right = 728.5
+offset_bottom = -109.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_2ckv8")
+theme_override_font_sizes/font_size = 45
+text = "Demo created by Juan Carlos Zamarreño Cruces as a final degree project.
+The content of the game can be different in the final product."
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -317.5
+offset_top = -60.0
+offset_right = 317.5
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.251318, 0.578002, 0.715333, 1)
+theme_override_fonts/font = ExtResource("2_0ctdu")
+theme_override_font_sizes/font_size = 200
+text = "Thanks for playing!"
+
+[node name="exitbttn" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.0
+offset_top = 130.0
+offset_right = 137.0
+offset_bottom = 258.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.362829, 0.362829, 0.362829, 1)
+theme_override_fonts/font = ExtResource("2_0ctdu")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0ctdu")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_2fbfq")
+text = "EXIT TO MAIN MENU"
+flat = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="exitbttn"]
+libraries = {
+&"": SubResource("AnimationLibrary_bjx6m")
+}
+autoplay = "activate"
+
+[connection signal="pressed" from="exitbttn" to="." method="_on_exitbttn_pressed"]
