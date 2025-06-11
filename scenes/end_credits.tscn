@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://8gs76c4uqmw"]
+
+[ext_resource type="Script" uid="uid://c6xvyifqorhj7" path="res://scripts/end_credits.gd" id="1_dhn2b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ovy8l"]
+size = Vector2(22, 90)
+
+[node name="EndCredits" type="Area2D" groups=["Player"]]
+script = ExtResource("1_dhn2b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ovy8l")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

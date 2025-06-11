@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://bsal7y07tp14o"]
+
+[ext_resource type="Script" uid="uid://cy0t73elvjt8r" path="res://scripts/green_door.gd" id="1_4eow8"]
+[ext_resource type="Texture2D" uid="uid://bpdd0yljnqw6f" path="res://assets/sprites/greendoor.png" id="2_luvo2"]
+[ext_resource type="Texture2D" uid="uid://orhyqw477h6" path="res://assets/luz_2.png" id="3_iehdv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ootao"]
+size = Vector2(20, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ossm"]
+size = Vector2(14, 16)
+
+[node name="GreenDoor" type="StaticBody2D"]
+script = ExtResource("1_4eow8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ootao")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.537255)
+texture_filter = 1
+texture = ExtResource("2_luvo2")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(1, 3.4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-8, 0)
+shape = SubResource("RectangleShape2D_6ossm")
+debug_color = Color(0.80873, 0.382967, 0.419221, 0.42)
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(16, 0)
+scale = Vector2(1, 3.4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-8, 0)
+shape = SubResource("RectangleShape2D_6ossm")
+debug_color = Color(0.80873, 0.382967, 0.419221, 0.42)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(0.08, 0.199999)
+color = Color(1, 1, 0, 1)
+energy = 2.87
+texture = ExtResource("3_iehdv")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]

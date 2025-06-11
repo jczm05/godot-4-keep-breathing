@@ -4,7 +4,7 @@ extends Line2D
 var max_distance = 2000
 
 func _process(_delta):
-	if Input.is_action_pressed("aim"):
+	if Input.is_action_pressed("aim") && is_instance_valid(gun):
 		var start_pos = gun.global_position
 		var mouse_pos = get_global_mouse_position()
 

@@ -56,10 +56,18 @@ func take_damage():
 		health.play("1")
 	elif progress_bar.value <= 33 and progress_bar.value > 0:
 		health.play("2")
-	elif progress_bar.value <= 0:
+	elif progress_bar.value <= 0 && is_instance_valid(gun):
 		health.play("3")
 		animated_sprite.play("death")
 		gun.queue_free()
+		await get_tree().create_timer(1).timeout
+		queue_free()
+		health.play("0")
+		Global.life = 100
+		get_tree().reload_current_scene()
+	elif progress_bar.value <= 0 && !is_instance_valid(gun):
+		health.play("3")
+		animated_sprite.play("death")
 		await get_tree().create_timer(1).timeout
 		queue_free()
 		health.play("0")
