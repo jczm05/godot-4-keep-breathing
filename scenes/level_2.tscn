@@ -74,6 +74,21 @@ sources/0 = SubResource("TileSetAtlasSource_wom6i")
 sources/1 = SubResource("TileSetAtlasSource_ycko3")
 sources/2 = SubResource("TileSetAtlasSource_x7blo")
 
+[sub_resource type="Animation" id="Animation_yk4f3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.11424]
+}
+
 [sub_resource type="Animation" id="Animation_qsmat"]
 resource_name = "new_animation"
 length = 10.0
@@ -89,21 +104,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [1.11424, 1.10975, 0.280768]
-}
-
-[sub_resource type="Animation" id="Animation_yk4f3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.11424]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cp0rv"]
