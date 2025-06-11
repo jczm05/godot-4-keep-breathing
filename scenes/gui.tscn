@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://duvwyjw8iv07d"]
+[gd_scene load_steps=33 format=3 uid="uid://duvwyjw8iv07d"]
 
 [ext_resource type="Texture2D" uid="uid://c2pt2k0kapsj" path="res://assets/health_bad.png" id="1_ja4jw"]
 [ext_resource type="Texture2D" uid="uid://v3k2d5bqovvi" path="res://assets/health_dead.png" id="2_nklw4"]
@@ -10,6 +10,9 @@
 [ext_resource type="FontFile" uid="uid://c10gwpuhrlstr" path="res://assets/fonts/SourceCodePro-VariableFont_wght.ttf" id="8_p54wi"]
 [ext_resource type="Texture2D" uid="uid://cu82pbk2rgn8b" path="res://assets/yellow_key_inv.png" id="8_yjxi2"]
 [ext_resource type="Texture2D" uid="uid://iihb0q4estmn" path="res://assets/green_key.png" id="10_xki8e"]
+[ext_resource type="FontFile" uid="uid://c8bx2tonerfbp" path="res://assets/fonts/Oswald-VariableFont_wght.ttf" id="11_qupqx"]
+[ext_resource type="Texture2D" uid="uid://djr3d4dk5ruu3" path="res://assets/keyboardcontrols.png" id="12_jw8q3"]
+[ext_resource type="Texture2D" uid="uid://cp6xic2sur5di" path="res://assets/mouse.png" id="13_bglms"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x64cr"]
 
@@ -261,3 +264,93 @@ texture_filter = 1
 position = Vector2(758, 74)
 scale = Vector2(3.28, 3.28)
 texture = ExtResource("10_xki8e")
+
+[node name="keycaps" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1468, 108)
+scale = Vector2(1.71714, 1.71714)
+texture = ExtResource("12_jw8q3")
+
+[node name="mouse" type="Sprite2D" parent="."]
+position = Vector2(1784, 112)
+texture = ExtResource("13_bglms")
+
+[node name="Label12" type="Label" parent="."]
+texture_filter = 2
+offset_left = 1505.0
+offset_top = 22.0
+offset_right = 1593.0
+offset_bottom = 56.0
+theme_override_fonts/font = ExtResource("11_qupqx")
+theme_override_font_sizes/font_size = 22
+text = "RECARGAR"
+
+[node name="Label13" type="Label" parent="."]
+texture_filter = 2
+offset_left = 1400.0
+offset_top = 24.0
+offset_right = 1464.0
+offset_bottom = 58.0
+theme_override_fonts/font = ExtResource("11_qupqx")
+theme_override_font_sizes/font_size = 22
+text = "ARRIBA"
+
+[node name="Label14" type="Label" parent="."]
+texture_filter = 2
+offset_left = 1438.0
+offset_top = 152.0
+offset_right = 1502.0
+offset_bottom = 186.0
+theme_override_fonts/font = ExtResource("11_qupqx")
+theme_override_font_sizes/font_size = 22
+text = "ABAJO"
+
+[node name="Label15" type="Label" parent="."]
+texture_filter = 2
+offset_left = 1556.0
+offset_top = 110.0
+offset_right = 1631.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("11_qupqx")
+theme_override_font_sizes/font_size = 22
+text = "DERECHA"
+
+[node name="Label16" type="Label" parent="."]
+texture_filter = 2
+offset_left = 1279.0
+offset_top = 110.0
+offset_right = 1366.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("11_qupqx")
+theme_override_font_sizes/font_size = 22
+text = "IZQUIERDA"
+
+[node name="Label17" type="Label" parent="."]
+texture_filter = 2
+offset_left = 1691.0
+offset_top = 12.0
+offset_right = 1766.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("11_qupqx")
+theme_override_font_sizes/font_size = 20
+text = "DISPARAR"
+
+[node name="Label11" type="Label" parent="."]
+texture_filter = 2
+offset_left = 1802.0
+offset_top = 12.0
+offset_right = 1877.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("11_qupqx")
+theme_override_font_sizes/font_size = 20
+text = "APUNTAR"
+
+[node name="Label10" type="Label" parent="."]
+texture_filter = 2
+offset_left = 1691.0
+offset_top = 12.0
+offset_right = 1766.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("11_qupqx")
+theme_override_font_sizes/font_size = 20
+text = "DISPARAR"

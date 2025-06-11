@@ -18,11 +18,8 @@ func _ready() -> void:
 func on_continue_pressed() -> void:
 	clicksound.play()
 	var path = "user://savegame.json"
-	var loaded_data = SaveManager.read_save()
 	if FileAccess.file_exists(path):
-		#Global.load_from_data(loaded_data)
 		get_tree().change_scene_to_file("res://scenes/load_screen.tscn")
-	#else:
 		
 
 func on_options_pressed() -> void:
