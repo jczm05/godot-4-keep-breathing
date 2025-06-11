@@ -158,9 +158,9 @@ point_count = 11
 
 [sub_resource type="Curve2D" id="Curve2D_guvtl"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -33, -98, 0, 0, 0, 0, 350, -98, 0, 0, 0, 0, 351, -287)
+"points": PackedVector2Array(0, 0, 0, 0, -33, -98, 0, 0, 0, 0, 350, -98, 0, 0, 0, 0, 351, -287, 0, 0, 0, 0, 328, -286, 0, 0, 0, 0, 333, -97, 0, 0, 0, 0, -32, -99, 0, 0, 0, 0, -34, -97)
 }
-point_count = 3
+point_count = 7
 
 [node name="level_2" type="Node2D"]
 script = ExtResource("1_guvtl")

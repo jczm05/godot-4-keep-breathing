@@ -80,21 +80,21 @@ point_count = 5
 
 [sub_resource type="Curve2D" id="Curve2D_7ewpb"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 206, -162, 0, 0, 0, 0, 204, 132)
+"points": PackedVector2Array(0, 0, 0, 0, 206, -162, 0, 0, 0, 0, 204, 132, 0, 0, 0, 0, 201, 131, 0, 0, 0, 0, 197, 130, 0, 0, 0, 0, 196, -163, 0, 0, 0, 0, 204, -163)
 }
-point_count = 2
+point_count = 6
 
 [sub_resource type="Curve2D" id="Curve2D_cp0rv"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 419, -75, 0, 0, 0, 0, 605, -74, 0, 0, 0, 0, 601, -221)
+"points": PackedVector2Array(0, 0, 0, 0, 419, -75, 0, 0, 0, 0, 605, -74, 0, 0, 0, 0, 601, -221, 0, 0, 0, 0, 595, -219, 0, 0, 0, 0, 598, -82, 0, 0, 0, 0, 419, -81, 0, 0, 0, 0, 419, -76)
 }
-point_count = 3
+point_count = 7
 
 [sub_resource type="Curve2D" id="Curve2D_py6g0"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 711, 34, 0, 0, 0, 0, 705, 223)
+"points": PackedVector2Array(0, 0, 0, 0, 711, 34, 0, 0, 0, 0, 705, 223, 0, 0, 0, 0, 710, 222, 0, 0, 0, 0, 715, 34, 0, 0, 0, 0, 711, 33)
 }
-point_count = 2
+point_count = 5
 
 [sub_resource type="Animation" id="Animation_7ewpb"]
 length = 0.001
